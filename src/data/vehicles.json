@@ -1,0 +1,211 @@
+{
+    "vehicles": [
+            {
+        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "name": "Toyota Camry",
+        "details": "A reliable and fuel-efficient sedan",
+        "condition": "foreign used",
+        "type": "automatic",
+        "address": "Lagos, Nigeria",
+        "cost": "4500000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "name": "Honda Accord",
+        "details": "A stylish and comfortable midsize sedan",
+        "condition": "local used",
+        "type": "automatic",
+        "address": "Abuja, Nigeria",
+        "cost": "3800000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "name": "Mercedes-Benz C-Class",
+        "details": "Luxury sedan with premium features",
+        "condition": "foreign used",
+        "type": "automatic",
+        "address": "Port Harcourt, Nigeria",
+        "cost": "8500000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "name": "BMW X5",
+        "details": "A powerful and stylish SUV",
+        "condition": "local used",
+        "type": "automatic",
+        "address": "Enugu, Nigeria",
+        "cost": "12000000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "name": "Lexus RX 350",
+        "details": "A luxury SUV with smooth performance",
+        "condition": "foreign used",
+        "type": "automatic",
+        "address": "Kaduna, Nigeria",
+        "cost": "9500000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "name": "Ford Explorer",
+        "details": "A spacious and reliable SUV",
+        "condition": "local used",
+        "type": "automatic",
+        "address": "Kano, Nigeria",
+        "cost": "6700000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "name": "Toyota Corolla",
+        "details": "One of the most durable compact cars",
+        "condition": "foreign used",
+        "type": "automatic",
+        "address": "Benin City, Nigeria",
+        "cost": "4200000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "name": "Nissan Altima",
+        "details": "A stylish and efficient sedan",
+        "condition": "local used",
+        "type": "automatic",
+        "address": "Ibadan, Nigeria",
+        "cost": "3900000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "name": "Hyundai Sonata",
+        "details": "A sleek and modern sedan",
+        "condition": "foreign used",
+        "type": "automatic",
+        "address": "Jos, Nigeria",
+        "cost": "4200000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "name": "Mazda CX-5",
+        "details": "A compact SUV with excellent handling",
+        "condition": "local used",
+        "type": "automatic",
+        "address": "Uyo, Nigeria",
+        "cost": "5000000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "name": "Toyota Highlander",
+        "details": "A spacious family-friendly SUV",
+        "condition": "foreign used",
+        "type": "automatic",
+        "address": "Awka, Nigeria",
+        "cost": "8500000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "name": "Range Rover Evoque",
+        "details": "A luxury SUV with off-road capabilities",
+        "condition": "local used",
+        "type": "automatic",
+        "address": "Calabar, Nigeria",
+        "cost": "12500000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "name": "Honda CR-V",
+        "details": "A compact SUV with a spacious interior",
+        "condition": "foreign used",
+        "type": "automatic",
+        "address": "Onitsha, Nigeria",
+        "cost": "6000000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "name": "Jeep Wrangler",
+        "details": "A rugged SUV for adventure lovers",
+        "condition": "local used",
+        "type": "automatic",
+        "address": "Abeokuta, Nigeria",
+        "cost": "10000000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "name": "Volkswagen Passat",
+        "details": "A German-engineered comfortable sedan",
+        "condition": "foreign used",
+        "type": "automatic",
+        "address": "Minna, Nigeria",
+        "cost": "5000000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "name": "Chevrolet Tahoe",
+        "details": "A full-size SUV with strong performance",
+        "condition": "local used",
+        "type": "automatic",
+        "address": "Lokoja, Nigeria",
+        "cost": "8000000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "name": "Kia Sportage",
+        "details": "A stylish and sporty compact SUV",
+        "condition": "foreign used",
+        "type": "automatic",
+        "address": "Makurdi, Nigeria",
+        "cost": "5500000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "name": "Subaru Outback",
+        "details": "A versatile crossover with AWD",
+        "condition": "local used",
+        "type": "automatic",
+        "address": "Osogbo, Nigeria",
+        "cost": "6200000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "name": "Tesla Model 3",
+        "details": "An electric car with advanced features",
+        "condition": "foreign used",
+        "type": "automatic",
+        "address": "Ilorin, Nigeria",
+        "cost": "15000000"
+    },
+    {
+        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "name": "Mitsubishi Pajero",
+        "details": "A rugged SUV for off-road and city driving",
+        "condition": "local used",
+        "type": "automatic",
+        "address": "Sokoto, Nigeria",
+        "cost": "7500000"
+    },
+        {
+            "imageUrl": "https://picsum.photos/id/237/200/300",
+            "name": "Toyota Camry",
+            "details": "A reliable and fuel-efficient sedan",
+            "condition": "foreign used",
+            "type": "automatic",
+            "address": "Lagos, Nigeria",
+            "cost": "4500000"
+        },
+        {
+            "imageUrl": "https://picsum.photos/200/300?grayscale",
+            "name": "Honda Accord",
+            "details": "A stylish and comfortable midsize sedan",
+            "condition": "local used",
+            "type": "automatic",
+            "address": "Abuja, Nigeria",
+            "cost": "3800000"
+        },
+        {
+            "imageUrl": "https://picsum.photos/id/237/200/300",
+            "name": "Mercedes-Benz C-Class",
+            "details": "Luxury sedan with premium features",
+            "condition": "foreign used",
+            "type": "automatic",
+            "address": "Port Harcourt, Nigeria",
+            "cost": "8500000"
+        }
+    ]
+}
