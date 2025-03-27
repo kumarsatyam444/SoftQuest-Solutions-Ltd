@@ -10,7 +10,6 @@ function App() {
       <Navbar />
       <NabarSupport />
       <div className="flex">
-        {/* <Category /> */}
         <Home />
       </div>
     </div>

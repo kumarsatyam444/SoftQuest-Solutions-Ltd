@@ -101,7 +101,7 @@ function NavbarSupport() {
   };
 
   return (
-    <div className='bg-green-600  py-6'>
+    <div className='bg-[#00b53f]  py-6'>
       <div className='text-center text-xl mb-4 text-white'>What are you looking for?</div>
       <div className='flex justify-center space-x-2'>
         <div 

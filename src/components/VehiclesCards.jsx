@@ -62,12 +62,16 @@ import React, { useState } from 'react'
 import vehiclesData from '../data/vehicles.json'
 
 function VehiclesCards() {
-  const [viewMode, setViewMode] = useState('list');
+  const [viewMode, setViewMode] = useState('grid');
 
   return (
-    <div>
+    <div className=''>
       {/* View Toggle Buttons */}
-      <div className='flex justify-end p-4 space-x-2'>
+     <div className='flex justify-between'>
+      <div>
+        <div className='text-2xl font-bold p-4 text-center'>Trending Ads</div>
+      </div>
+     <div className='flex justify-end p-4 space-x-2'>
         <button 
           onClick={() => setViewMode('grid')}
           className={`p-2 rounded ${viewMode === 'grid' ? 'bg-green-500 text-white' : 'bg-gray-200'}`}
@@ -85,6 +89,7 @@ function VehiclesCards() {
           </svg>
         </button>
       </div>
+     </div>
 
       {/* Vehicles Display */}
       {viewMode === 'grid' ? (
