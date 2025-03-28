@@ -8,11 +8,11 @@ function Home() {
       {/* <div className="justify-center text-center ">
         <h1 className="text-2xl font-bold p-4">trending ads</h1>
       </div> */}
-      <div className="flex">
+      <div className="flex justify-between">
         <div className="w-1/4 bg-white shadow-md p-4">
           <Category />
         </div>
-        <div className="container mx-auto">
+        <div className="container justify-end mx-auto">
           <VehiclesCards />
         </div>
       </div>

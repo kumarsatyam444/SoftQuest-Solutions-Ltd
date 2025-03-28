@@ -1,30 +1,4 @@
-// import React from 'react'
 
-// function NabarSupport() {
-//   return (
-//        <div className='border-spacing-1 bg-green-600 text-white p-4'>
-//         <div className='text-center '>What are you looking for?</div>
-//        <div className='flex justify-center'>
-//        <div className='flex justify-center'>
-//           <div className='flex mx-2'>
-//           <label for="cars" className='text-gray-600 bg-white'>All Nigeria:</label>
-//           <select name="cars" id="cars">
-//             <option value="volvo">Volvo</option>
-//             <option value="saab">Saab</option>
-//             <option value="mercedes">Mercedes</option>
-//             <option value="audi">Audi</option>
-//           </select>
-//           </div>
-//         </div>
-//         <div className='text-center'>
-//           <input type="text" placeholder="I am looking for..." />
-//         </div>
-//        </div>
-//       </div>
-//   )
-// }
-
-// export default NabarSupport
 import React, { useState } from 'react'
 
 function NavbarSupport() {
@@ -101,7 +75,7 @@ function NavbarSupport() {
   };
 
   return (
-    <div className='bg-[#00b53f]  py-6'>
+    <div className='bg-[#00b53f]  py-[100px]'>
       <div className='text-center text-xl mb-4 text-white'>What are you looking for?</div>
       <div className='flex justify-center space-x-2'>
         <div 

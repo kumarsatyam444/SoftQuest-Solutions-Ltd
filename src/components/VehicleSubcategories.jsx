@@ -13,7 +13,7 @@ const vehicleSubcategories = [
 
 function VehicleSubcategories() {
   return (
-    <div className="absolute left-full top-0 w-[300px] bg-white shadow-lg border border-gray-200 z-10">
+    <div className="absolute left-full top-0 w-[300px] bg-white shadow-lg rounded-lg border border-gray-200 mx-2 z-10">
       {vehicleSubcategories.map((subcategory, index) => (
         <div 
           key={index} 
@@ -38,7 +38,9 @@ function VehicleSubcategories() {
               />
             </svg>
           </div>
+        <br />
         </div>
+        
       ))}
     </div>
   );

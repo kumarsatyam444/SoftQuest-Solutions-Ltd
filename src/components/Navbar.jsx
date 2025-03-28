@@ -6,7 +6,7 @@ function Navbar() {
 
   return (
     <>
-      <div className='border-b-[1px] border-black'>
+      <div className='border-b-[1px] border-black '>
         <div className="flex items-center justify-between px-10 bg-[#00b53f] text-white py-4">
           <div className="font-extrabold text-4xl">Jiji</div>
           <div className='opacity-75'>SELL FASTER, BUY SMARTER</div>
@@ -24,7 +24,8 @@ function Navbar() {
             >
               Register
             </div>
-            <div className="bg-yellow-500 p-2 px-7 rounded-md">SELL</div>
+            <div className="bg-yellow-500 p-2 cursor-pointer px-7 rounded-md"  onClick={() => setIsLoginModalOpen(true)} 
+              >SELL</div>
           </div>
         </div>
       </div>
