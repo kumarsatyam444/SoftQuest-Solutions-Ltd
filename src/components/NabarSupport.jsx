@@ -43,18 +43,18 @@ function NavbarSupport() {
             <input 
               type="text" 
               placeholder="Find state, city or district..." 
-              className='w-full p-2 border rounded'
+              className='w-full p-2 border rounded text-gray-500'
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
 
           {/* States Grid */}
-          <div className='grid grid-cols-3 gap-2 p-4 overflow-y-auto'>
+          <div className='grid grid-cols-3 gap-2 p-4 overflow-y-auto text-gray-500'>
             {filteredStates.map((state, index) => (
               <button 
                 key={index} 
-                className='p-2 border rounded hover:bg-green-100'
+                className='p-2 border rounded hover:bg-green-100  text-gray-500'
                 onClick={() => {
                   setSelectedRegion(state);
                   setIsModalOpen(false);
