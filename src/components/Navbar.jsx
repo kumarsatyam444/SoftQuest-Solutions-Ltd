@@ -6,8 +6,9 @@ function Navbar() {
 
   return (
     <>
-      <div className='border-b-[.5px] border-[#00831e] '>
-        <div className="flex items-center justify-between px-10 bg-[#00b53f] text-white py-1">
+      <div className='fixed top-0 left-0 w-full z-50 border-b-[.5px]  border-[#00831e] '>
+       <div className='fixed w-full'>
+       <div className="flex items-center justify-between px-10 bg-[#00b53f] text-white py-1">
           <div className="font-extrabold mr-[30px] text-[30px]">Jiji</div>
           <div className='opacity-55 text-[15px]'>SELL FASTER, BUY SMARTER</div>
           <div className="flex items-center space-x-4">
@@ -28,6 +29,7 @@ function Navbar() {
               >SELL</div>
           </div>
         </div>
+       </div>
       </div>
 
       <LoginModal 
