@@ -107,7 +107,7 @@ function GridViewCard({ vehicle }) {
       <div className="relative aspect-[4/3]"> {/* 4:3 aspect ratio */}
         <img
           // src={vehicle.imageUrl}
-          src={"../../public/car.png"}
+          src="/car.png"
           alt={vehicle.name}
           className="w-full h-full object-cover"
           onError={(e) => {

@@ -6,25 +6,25 @@ function Navbar() {
 
   return (
     <>
-      <div className='border-b-[1px] border-gray-700 '>
-        <div className="flex items-center justify-between px-10 bg-[#00b53f] text-white py-4">
-          <div className="font-extrabold text-2xl">Jiji</div>
-          <div className='opacity-55'>SELL FASTER, BUY SMARTER</div>
+      <div className='border-b-[.5px] border-[#00831e] '>
+        <div className="flex items-center justify-between px-10 bg-[#00b53f] text-white py-1">
+          <div className="font-extrabold mr-[30px] text-[30px]">Jiji</div>
+          <div className='opacity-55 text-[15px]'>SELL FASTER, BUY SMARTER</div>
           <div className="flex items-center space-x-4">
             <div 
               onClick={() => setIsLoginModalOpen(true)} 
-              className="cursor-pointer"
+              className="cursor-pointer text-[15px] "
             >
               Sign in
             </div>
             <div>|</div>
             <div 
               onClick={() => setIsLoginModalOpen(true)} 
-              className="cursor-pointer"
+              className="cursor-pointer  text-[15px]"
             >
               Register
             </div>
-            <div className="bg-yellow-500 p-2 cursor-pointer px-7 rounded-md"  onClick={() => setIsLoginModalOpen(true)} 
+            <div className="bg-yellow-500 p-[2px] cursor-pointer  text-[15px]  px-[36px] rounded-md"  onClick={() => setIsLoginModalOpen(true)} 
               >SELL</div>
           </div>
         </div>
