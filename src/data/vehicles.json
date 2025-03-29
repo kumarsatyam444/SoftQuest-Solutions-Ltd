@@ -1,7 +1,7 @@
 {
     "vehicles": [
             {
-        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "imageUrl": "../../public/car.png",
         "name": "Toyota Camry",
         "details": "A reliable and fuel-efficient sedan",
         "condition": "foreign used",
@@ -10,7 +10,7 @@
         "cost": "4500000"
     },
     {
-        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "imageUrl": "../../public/car.png",
         "name": "Honda Accord",
         "details": "A stylish and comfortable midsize sedan",
         "condition": "local used",
@@ -19,7 +19,7 @@
         "cost": "3800000"
     },
     {
-        "imageUrl": "https://picsum.photos/id/237/200/300",
+        "imageUrl": "../../public/car.png",
         "name": "Mercedes-Benz C-Class",
         "details": "Luxury sedan with premium features",
         "condition": "foreign used",
@@ -28,7 +28,7 @@
         "cost": "8500000"
     },
     {
-        "imageUrl": "https://picsum.photos/200/300?grayscale",
+        "imageUrl": "../../public/car.png",
         "name": "BMW X5",
         "details": "A powerful and stylish SUV",
         "condition": "local used",
