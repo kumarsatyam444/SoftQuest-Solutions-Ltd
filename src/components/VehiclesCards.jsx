@@ -8,7 +8,7 @@ function VehiclesCards() {
     <div className="w-full">
       {/* View Toggle Buttons */}
       <div className="flex justify-between items-center w-full">
-        <div className="p-4 text-center text-md font-bold">TRENDING ADS</div>
+        <div className="p-4 text-center text-md text-gray-600 font-[600] ">Trending ads</div>
         <div className="flex justify-end p-4 space-x-2">
           <button
             onClick={() => setViewMode("grid")}

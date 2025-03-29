@@ -9,7 +9,7 @@ function App() {
     <div>
       <Navbar />
       <NabarSupport />
-      <div className="flex">
+      <div className="flex justify-center">
         <Home />
       </div>
     </div>

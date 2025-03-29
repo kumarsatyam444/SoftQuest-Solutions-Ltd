@@ -8,8 +8,8 @@ function Navbar() {
     <>
       <div className='border-b-[1px] border-black '>
         <div className="flex items-center justify-between px-10 bg-[#00b53f] text-white py-4">
-          <div className="font-extrabold text-4xl">Jiji</div>
-          <div className='opacity-75'>SELL FASTER, BUY SMARTER</div>
+          <div className="font-extrabold text-2xl">Jiji</div>
+          <div className='opacity-55'>SELL FASTER, BUY SMARTER</div>
           <div className="flex items-center space-x-4">
             <div 
               onClick={() => setIsLoginModalOpen(true)} 
