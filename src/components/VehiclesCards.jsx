@@ -89,6 +89,27 @@ function GridViewCard({ vehicle }) {
     return uniqueParts.join(". ") + (uniqueParts.length > 0 ? "." : "");
   };
 
+  // Array of available car images
+  const carImages = [
+    "/vehilcleImg/blackToyota.png",
+    "/vehilcleImg/merc.png",
+    "/vehilcleImg/redToyota.png",
+    "/vehilcleImg/whiteLexus.png"
+  ];
+
+  // Get a deterministic but seemingly random image based on vehicle name
+  const getCarImage = () => {
+    // Use vehicle name or index to create a deterministic selection
+    if (vehicle.name) {
+      // Create a simple hash from the vehicle name
+      const nameSum = vehicle.name.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
+      return carImages[nameSum % carImages.length];
+    }
+    
+    // Fallback to a random image
+    return carImages[Math.floor(Math.random() * carImages.length)];
+  };
+
   const formattedDetails = formatDetails(vehicle.details);
 
   return (
@@ -98,12 +119,11 @@ function GridViewCard({ vehicle }) {
         {" "}
         {/* 4:3 aspect ratio */}
         <img
-          // src={vehicle.imageUrl}
-          src="/car.png"
+          src={getCarImage()}
           alt={vehicle.name}
           className="w-full h-full object-cover"
           onError={(e) => {
-            e.target.src = "placeholder-image-url";
+            e.target.src = "/car.png";
             e.target.onerror = null;
           }}
         />
@@ -170,15 +190,40 @@ function ListViewCard({ vehicle }) {
     return uniqueParts.join(". ") + (uniqueParts.length > 0 ? "." : "");
   };
 
+  // Array of available car images
+  const carImages = [
+    "/vehilcleImg/blackToyota.png",
+    "/vehilcleImg/merc.png",
+    "/vehilcleImg/redToyota.png",
+    "/vehilcleImg/whiteLexus.png"
+  ];
+
+  // Get a deterministic but seemingly random image based on vehicle name
+  const getCarImage = () => {
+    // Use vehicle name or index to create a deterministic selection
+    if (vehicle.name) {
+      // Create a simple hash from the vehicle name
+      const nameSum = vehicle.name.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
+      return carImages[nameSum % carImages.length];
+    }
+    
+    // Fallback to a random image
+    return carImages[Math.floor(Math.random() * carImages.length)];
+  };
+
   const formattedDetails = formatDetails(vehicle.details);
 
   return (
     <div className="flex bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 w-full hover:shadow-lg transition-shadow duration-300">
       <div className="relative w-1/3 min-w-[200px]">
         <img
-          src="/car.png"
+          src={getCarImage()}
           alt={vehicle.name}
           className="w-full h-full object-cover"
+          onError={(e) => {
+            e.target.src = "/car.png";
+            e.target.onerror = null;
+          }}
         />
         <div className="absolute top-2 right-2 bg-gray-300 text-gray-700 px-2 py-1 rounded text-xs font-medium">
           Verified ID
@@ -193,6 +238,7 @@ function ListViewCard({ vehicle }) {
           </p>
 
           <div className="mb-3">
+            
             <span
               className={`inline-block px-2 py-1 rounded text-xs font-medium ${
                 vehicle.condition === "Foreign Used"
@@ -200,6 +246,7 @@ function ListViewCard({ vehicle }) {
                   : "bg-green-100 text-green-800"
               }`}
             >
+
               {vehicle.condition}
             </span>
             <span className="ml-2 inline-block bg-gray-100 px-2 py-1 rounded text-xs font-medium">

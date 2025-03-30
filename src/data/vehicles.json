@@ -2,7 +2,7 @@
     "vehicles": [
             {
         "imageUrl": "/vehilcleImg/redToyota.png",
-        "name": "Toyota Camry",
+        "name": "Toyota Camry 2020",
         "details": "A reliable and fuel-efficient sedan",
         "condition": "foreign used",
         "type": "automatic",
