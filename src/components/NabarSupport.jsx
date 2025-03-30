@@ -102,7 +102,7 @@ function NavbarSupport() {
   };
 
   return (
-    <div className="bg-[#00b53f] rounded-[30px] py-[81px]">
+    <div className="bg-[#00b53f] rounded-b-[30px] py-[83px]">
       <div className="text-center text-xl mb-4 pt-[50px] text-white">
         What are you looking for?
       </div>
@@ -119,7 +119,7 @@ function NavbarSupport() {
             <input
               type="text"
               placeholder="I am looking for..."
-              className="w-full py-2 px-4 pr-20 text-[18px]  rounded-md  focus:outline-none"
+              className="w-full py-2 pr-[160px] pl-[20px] text-[17px] text-gray-800 rounded-md  focus:outline-none"
             />
             <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 rounded-full p-1">
               <svg

@@ -31,7 +31,7 @@ function Navbar() {
                 Registration
               </div>
               <button 
-                className="bg-[#FEA03C] text-[15px] px-6 py-2 rounded-md font-medium hover:bg-[#e89235]"
+                className="bg-[#FEA03C] text-[15px] px-[42px] py-[8px] rounded-md font-medium hover:bg-[#e89235]"
                 onClick={() => setIsLoginModalOpen(true)}
               >
                 SELL
