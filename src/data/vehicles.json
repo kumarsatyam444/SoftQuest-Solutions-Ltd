@@ -1,7 +1,7 @@
 {
     "vehicles": [
             {
-        "imageUrl": "../../public/car.png",
+        "imageUrl": "/vehilcleImg/redToyota.png",
         "name": "Toyota Camry",
         "details": "A reliable and fuel-efficient sedan",
         "condition": "foreign used",
@@ -10,7 +10,7 @@
         "cost": "4500000"
     },
     {
-        "imageUrl": "../../public/car.png",
+        "imageUrl": "../../public/vehicleImg/redToyota.png",
         "name": "Honda Accord",
         "details": "A stylish and comfortable midsize sedan",
         "condition": "local used",

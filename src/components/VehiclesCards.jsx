@@ -5,16 +5,16 @@ function VehiclesCards() {
   const [viewMode, setViewMode] = useState("grid");
 
   return (
-    <div className="w-full ">
+    <div className="w-full">
       {/* View Toggle Buttons */}
       <div className="flex justify-between items-center">
-        <div className="p-4 text-center text-md text-gray-600 font-[600] ">
+        <div className="p-4 text-center text-md text-gray-600 font-[600]">
           Trending ads
         </div>
         <div className="flex justify-end p-4 space-x-2">
           <button
             onClick={() => setViewMode("grid")}
-            className={`p-2 rounded w-[40px]  ${
+            className={`p-2 rounded w-[40px] ${
               viewMode === "grid" ? " text-white" : "bg-gray-200"
             }`}
           >
@@ -33,35 +33,21 @@ function VehiclesCards() {
               viewMode === "list" ? " text-white" : "bg-gray-200"
             }`}
           >
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            > */}
             <img 
-            src={
-              viewMode === "grid"
-                ? "/icons/line-menu.png"
-                : "/icons/active-line-menu.png"
+              src={
+                viewMode === "grid"
+                  ? "/icons/line-menu.png"
+                  : "/icons/active-line-menu.png"
               }
               alt="List View"
-             />
-              {/* <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 10h16M4 14h16M4 18h16"
-              /> */}
-            {/* </svg> */}
+            />
           </button>
         </div>
       </div>
 
       {/* Vehicles Display */}
       {viewMode === "grid" ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 items-start">
           {vehiclesData.vehicles.map((vehicle, index) => (
             <GridViewCard key={index} vehicle={vehicle} />
           ))}

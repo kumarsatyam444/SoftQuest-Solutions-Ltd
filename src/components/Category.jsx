@@ -27,7 +27,7 @@ function Categories() {
           <div className="flex items-center p-3 hover:bg-gray-100 cursor-pointer">
             <div className="mr-4 text-2xl w-[50px]"><img src="/vehicles-x3.png" alt="" /></div>
             <div className="flex-grow">
-              <div className="text-sm font-medium">{category.name}</div>
+              <div className="text-[16px] text-gray-700 font-medium">{category.name}</div>
               <div className="text-xs text-gray-500">{category.ads} ads</div>
             </div>
             <div>
