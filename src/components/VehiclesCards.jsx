@@ -97,23 +97,45 @@ function GridViewCard({ vehicle }) {
     "/vehilcleImg/whiteLexus.png"
   ];
 
-  // Get a deterministic but seemingly random image based on vehicle name
+  // Get a random image
   const getCarImage = () => {
-    // Use vehicle name or index to create a deterministic selection
-    if (vehicle.name) {
-      // Create a simple hash from the vehicle name
-      const nameSum = vehicle.name.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
-      return carImages[nameSum % carImages.length];
-    }
-    
-    // Fallback to a random image
     return carImages[Math.floor(Math.random() * carImages.length)];
   };
+  
+  // Generate random styling for cards
+  const getRandomStyling = () => {
+    const random = Math.random();
+    
+    // Border styles - orange, green, or none
+    let borderStyle = "";
+    if (random < 0.15) {
+      borderStyle = "border-orange-500 border-2"; // Orange border (15% chance)
+    } else if (random < 0.3) {
+      borderStyle = "border-green-500 border-2"; // Green border (15% chance)
+    } else {
+      borderStyle = "border border-gray-200"; // Default border (70% chance)
+    }
+    
+    // Background tint - apply to some cards
+    let bgStyle = "";
+    if (random < 0.1) {
+      bgStyle = "bg-blue-50"; // Light blue (10% chance)
+    } else if (random < 0.17) {
+      bgStyle = "bg-yellow-50"; // Light yellow (7% chance)
+    } else if (random < 0.22) {
+      bgStyle = "bg-purple-50"; // Light purple (5% chance)
+    } else {
+      bgStyle = "bg-white"; // Default white (78% chance)
+    }
+    
+    return `${borderStyle} ${bgStyle}`;
+  };
 
+  const randomStyling = getRandomStyling();
   const formattedDetails = formatDetails(vehicle.details);
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+    <div className={`rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col ${randomStyling}`}>
       {/* Image Section */}
       <div className="relative aspect-[4/3]">
         {" "}
@@ -198,23 +220,45 @@ function ListViewCard({ vehicle }) {
     "/vehilcleImg/whiteLexus.png"
   ];
 
-  // Get a deterministic but seemingly random image based on vehicle name
+  // Get a random image
   const getCarImage = () => {
-    // Use vehicle name or index to create a deterministic selection
-    if (vehicle.name) {
-      // Create a simple hash from the vehicle name
-      const nameSum = vehicle.name.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
-      return carImages[nameSum % carImages.length];
-    }
-    
-    // Fallback to a random image
     return carImages[Math.floor(Math.random() * carImages.length)];
   };
+  
+  // Generate random styling for cards
+  const getRandomStyling = () => {
+    const random = Math.random();
+    
+    // Border styles - orange, green, or none
+    let borderStyle = "";
+    if (random < 0.15) {
+      borderStyle = "border-orange-500 border-2"; // Orange border (15% chance)
+    } else if (random < 0.3) {
+      borderStyle = "border-green-500 border-2"; // Green border (15% chance)
+    } else {
+      borderStyle = "border border-gray-200"; // Default border (70% chance)
+    }
+    
+    // Background tint - apply to some cards
+    let bgStyle = "";
+    if (random < 0.1) {
+      bgStyle = "bg-blue-50"; // Light blue (10% chance)
+    } else if (random < 0.17) {
+      bgStyle = "bg-yellow-50"; // Light yellow (7% chance)
+    } else if (random < 0.22) {
+      bgStyle = "bg-purple-50"; // Light purple (5% chance)
+    } else {
+      bgStyle = "bg-white"; // Default white (78% chance)
+    }
+    
+    return `${borderStyle} ${bgStyle}`;
+  };
 
+  const randomStyling = getRandomStyling();
   const formattedDetails = formatDetails(vehicle.details);
 
   return (
-    <div className="flex bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 w-full hover:shadow-lg transition-shadow duration-300">
+    <div className={`flex rounded-lg shadow-md overflow-hidden w-full hover:shadow-lg transition-shadow duration-300 ${randomStyling}`}>
       <div className="relative w-1/3 min-w-[200px]">
         <img
           src={getCarImage()}
@@ -238,7 +282,6 @@ function ListViewCard({ vehicle }) {
           </p>
 
           <div className="mb-3">
-            
             <span
               className={`inline-block px-2 py-1 rounded text-xs font-medium ${
                 vehicle.condition === "Foreign Used"
@@ -246,7 +289,6 @@ function ListViewCard({ vehicle }) {
                   : "bg-green-100 text-green-800"
               }`}
             >
-
               {vehicle.condition}
             </span>
             <span className="ml-2 inline-block bg-gray-100 px-2 py-1 rounded text-xs font-medium">
