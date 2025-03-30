@@ -102,7 +102,7 @@ function NavbarSupport() {
   };
 
   return (
-    <div className="bg-[#00b53f] rounded-[30px] py-[105px]">
+    <div className="bg-[#00b53f] rounded-[30px] py-[81px]">
       <div className="text-center text-xl mb-4 pt-[50px] text-white">
         What are you looking for?
       </div>
