@@ -3,7 +3,7 @@ import VehicleSubcategories from './VehicleSubcategories';
 
 const categoriesData = [
   { 
-    icon: "🚗", 
+    icon: "/vehicles-x3.png", 
     name: "Vehicles", 
     ads: "322,158",
     hasSubcategories: true
@@ -25,7 +25,7 @@ function Categories() {
           onMouseLeave={() => setActiveCategory(null)}
         >
           <div className="flex items-center p-3 hover:bg-gray-100 cursor-pointer">
-            <div className="mr-4 text-2xl">{category.icon}</div>
+            <div className="mr-4 text-2xl w-[50px]"><img src="/vehicles-x3.png" alt="" /></div>
             <div className="flex-grow">
               <div className="text-sm font-medium">{category.name}</div>
               <div className="text-xs text-gray-500">{category.ads} ads</div>

@@ -1,14 +1,14 @@
 import React from 'react';
 
 const vehicleSubcategories = [
-  { icon: "🚗", name: "Cars", ads: "117,619" },
-  { icon: "🚌", name: "Buses & Microbuses", ads: "6,384" },
-  { icon: "🚜", name: "Heavy Equipment", ads: "2,350" },
-  { icon: "🏍️", name: "Motorcycles & Scooters", ads: "2,639" },
-  { icon: "🚚", name: "Trucks & Trailers", ads: "9,791" },
-  { icon: "🛠️", name: "Vehicle Parts & Accessories", ads: "183,240" },
-  { icon: "⛵", name: "Watercraft & Boats", ads: "135" },
-  { icon: "🔧", name: "Automotive Services", ads: "4,187" }
+  { icon: "/icons/car.png", name: "Cars", ads: "117,619" },
+  { icon: "/icons/bus.png", name: "Buses & Microbuses", ads: "6,384" },
+  { icon: "/icons/heavy.png", name: "Heavy Equipment", ads: "2,350" },
+  { icon: "/icons/moto.png", name: "Motorcycles & Scooters", ads: "2,639" },
+  { icon: "/icons/truck.png", name: "Trucks & Trailers", ads: "9,791" },
+  { icon: "/icons/parts.png", name: "Vehicle Parts & Accessories", ads: "183,240" },
+  { icon: "/icons/watercraft.png", name: "Watercraft & Boats", ads: "135" },
+  { icon: "/icons/automotive.png", name: "Automotive Services", ads: "4,187" }
 ];
 
 function VehicleSubcategories() {
@@ -19,7 +19,13 @@ function VehicleSubcategories() {
           key={index} 
           className="flex items-center p-3 hover:bg-gray-100 cursor-pointer"
         >
-          <div className="mr-4 text-2xl">{subcategory.icon}</div>
+          <div className="mr-4">
+            <img 
+              src={subcategory.icon} 
+              alt={subcategory.name}
+              className="w-6 h-6 object-contain" 
+            />
+          </div>
           <div className="flex-grow">
             <div className="text-sm font-medium">{subcategory.name}</div>
             <div className="text-xs text-gray-500">{subcategory.ads} ads</div>
@@ -38,9 +44,7 @@ function VehicleSubcategories() {
               />
             </svg>
           </div>
-        <br />
         </div>
-        
       ))}
     </div>
   );
