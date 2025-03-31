@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import VehicleSubcategories from './VehicleSubcategories';
 
 const categoriesData = [
@@ -12,8 +13,21 @@ const categoriesData = [
   // Add other categories as needed
 ];
 
-function Categories() {
+function Categories({ onCategoryClick }) {
   const [activeCategory, setActiveCategory] = useState(null);
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (categoryName) => {
+    if (categoryName === "Vehicles") {
+      // If onCategoryClick prop is provided, use it (for backward compatibility)
+      if (onCategoryClick) {
+        onCategoryClick(categoryName);
+      } else {
+        // Otherwise navigate directly
+        navigate('/vehicles');
+      }
+    }
+  };
 
   return (
     <div className="bg-white shadow-md">
@@ -24,7 +38,10 @@ function Categories() {
           onMouseEnter={() => setActiveCategory(category.name)}
           onMouseLeave={() => setActiveCategory(null)}
         >
-          <div className="flex items-center p-3 hover:bg-gray-100 cursor-pointer">
+          <div 
+            className="flex items-center p-3 hover:bg-gray-100 cursor-pointer"
+            onClick={() => handleCategoryClick(category.name)}
+          >
             <div className="mr-4 text-2xl w-[50px]"><img src="/vehicles-x3.png" alt="" /></div>
             <div className="flex-grow">
               <div className="text-[16px] text-gray-700 font-medium">{category.name}</div>
