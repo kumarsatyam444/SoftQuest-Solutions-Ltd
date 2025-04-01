@@ -109,8 +109,9 @@ function Navbar({ showSearchInNav }) {
   return (
     <>
       <div className='fixed top-0 left-0 w-full z-50 border-b-[1px] border-black border-opacity-15 shadow-sm'>
-        <div className='w-full flex justify-center bg-[#00b53f]'>
-          <div className="w-full max-w-6xl flex items-center text-white py-1 px-6">
+        {/* Increased height for the navbar on Vehicles page */}
+        <div className={`w-full flex justify-center bg-[#00b53f] ${showSearchInNav ? 'py-2' : 'py-1'}`}>
+          <div className="w-full max-w-6xl flex items-center text-white px-6">
             {/* Hamburger menu icon - only show on Vehicles page */}
             {showSearchInNav && (
               <button 
@@ -144,21 +145,21 @@ function Navbar({ showSearchInNav }) {
             {showSearchInNav ? (
               /* For Vehicles page */
               <>
-                {/* Slightly larger Search Bar with proper text padding */}
-                <div className="relative max-w-sm">
+                {/* Larger Search Bar with increased width and height */}
+                <div className="relative w-[320px]">
                   <input
                     type="text"
                     placeholder="Search in Vehicles"
-                    className="w-full py-1.5 pl-3 pr-16 text-sm text-gray-800 rounded-md focus:outline-none"
+                    className="w-full py-2.5 pl-4 pr-16 text-sm text-gray-800 rounded-md focus:outline-none"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
-                  {/* Search Icon */}
-                  <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400">
+                  {/* Search Icon - positioned further right */}
+                  <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="18"
+                      height="18"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -170,12 +171,12 @@ function Navbar({ showSearchInNav }) {
                       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                   </button>
-                  {/* Save Icon (Instagram style) - now in green color */}
-                  <button className="absolute right-8 top-1/2 transform -translate-y-1/2 text-[#00b53f]">
+                  {/* Save Icon - positioned further right */}
+                  <button className="absolute right-10 top-1/2 transform -translate-y-1/2 text-[#00b53f]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="18"
+                      height="18"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -232,8 +233,8 @@ function Navbar({ showSearchInNav }) {
       
       {isModalOpen && <StateModal />}
       
-      {/* Add spacing only for Vehicles page */}
-      {showSearchInNav && <div className="h-16"></div>}
+      {/* Add more spacing for Vehicles page to account for taller navbar */}
+      {showSearchInNav && <div className="h-20"></div>}
     </>
   );
 }
