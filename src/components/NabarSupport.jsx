@@ -102,24 +102,24 @@ function NavbarSupport() {
   };
 
   return (
-    <div className="bg-[#00b53f] rounded-b-[30px] py-[83px]">
-      <div className="text-center text-xl mb-4 pt-[50px] text-white">
+    <div className="bg-[#00b53f] rounded-b-[30px] pt-[40px] pb-[30px] mt-[40px]">
+      <div className="text-center text-xl mb-4 pt-[20px] text-white">
         What are you looking for?
       </div>
       <div className="flex justify-center space-x-2">
         <div
           onClick={() => setIsModalOpen(true)}
-          className="bg-white text-gray-500 text-[17px] px-4  rounded-md cursor-pointer flex items-center"
+          className="bg-white text-gray-500 text-[17px] px-4 rounded-md cursor-pointer flex items-center"
         >
           {selectedRegion} ▼
         </div>
 
-        <div className=" bg-[#00b53f] py-[0.5] px-4">
-          <div className="relative max-w-3xl t mx-auto">
+        <div className="bg-[#00b53f] py-[0.5] px-4">
+          <div className="relative max-w-3xl mx-auto">
             <input
               type="text"
               placeholder="I am looking for..."
-              className="w-full py-2 pr-[160px] pl-[20px] text-[17px] text-gray-800 rounded-md  focus:outline-none"
+              className="w-full py-2 pr-[160px] pl-[20px] text-[17px] text-gray-800 rounded-md focus:outline-none"
             />
             <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 rounded-full p-1">
               <svg
@@ -143,6 +143,9 @@ function NavbarSupport() {
 
       {/* Render Modal when isModalOpen is true */}
       {isModalOpen && <StateModal />}
+      
+      {/* Add spacing for content below */}
+      <div className="h-4"></div>
     </div>
   );
 }

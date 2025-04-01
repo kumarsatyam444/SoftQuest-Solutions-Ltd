@@ -7,6 +7,7 @@ function Navbar({ showSearchInNav }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState("All Nigeria");
   const [searchTerm, setSearchTerm] = useState("");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
   const nigerianStates = [
     "Abuja (FCT)",
@@ -110,27 +111,50 @@ function Navbar({ showSearchInNav }) {
       <div className='fixed top-0 left-0 w-full z-50 border-b-[1px] border-black border-opacity-15 shadow-sm'>
         <div className='w-full flex justify-center bg-[#00b53f]'>
           <div className="w-full max-w-6xl flex items-center text-white py-1 px-6">
+            {/* Hamburger menu icon - only show on Vehicles page */}
+            {showSearchInNav && (
+              <button 
+                className="mr-3 focus:outline-none" 
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="24" 
+                  height="24" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  className="feather feather-align-justify"
+                >
+                  <line x1="21" y1="10" x2="3" y2="10"></line>
+                  <line x1="21" y1="6" x2="3" y2="6"></line>
+                  <line x1="21" y1="14" x2="3" y2="14"></line>
+                  <line x1="21" y1="18" x2="3" y2="18"></line>
+                </svg>
+              </button>
+            )}
+            
             {/* Logo */}
             <div className="font-extrabold text-3xl mr-4">Jiji</div>
             
-            {/* Search components for Vehicles page - inline with other elements */}
-            {showSearchInNav && (
-              <div className="flex items-center flex-grow mx-4">
-                <div
-                  onClick={() => setIsModalOpen(true)}
-                  className="bg-white text-gray-500 text-sm px-3 py-1 rounded-md cursor-pointer flex items-center mr-2"
-                >
-                  {selectedRegion.length > 15 ? selectedRegion.substring(0, 15) + '...' : selectedRegion} ▼
-                </div>
-                <div className="relative flex-grow max-w-md">
+            {/* Different content based on page */}
+            {showSearchInNav ? (
+              /* For Vehicles page */
+              <>
+                {/* Slightly larger Search Bar with proper text padding */}
+                <div className="relative max-w-sm">
                   <input
                     type="text"
-                    placeholder="I am looking for..."
-                    className="w-full py-1 px-3 text-sm text-gray-800 rounded-md focus:outline-none"
+                    placeholder="Search in Vehicles"
+                    className="w-full py-1.5 pl-3 pr-16 text-sm text-gray-800 rounded-md focus:outline-none"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
-                  <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 rounded-full">
+                  {/* Search Icon */}
+                  <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -146,17 +170,34 @@ function Navbar({ showSearchInNav }) {
                       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                   </button>
+                  {/* Save Icon (Instagram style) - now in green color */}
+                  <button className="absolute right-8 top-1/2 transform -translate-y-1/2 text-[#00b53f]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </button>
                 </div>
-              </div>
-            )}
-            
-            {/* Tagline - only show when not on vehicles page */}
-            {!showSearchInNav && (
+                
+                {/* Tagline - now between search and auth buttons */}
+                <div className='opacity-55 text-[15px] mx-auto'>SELL FASTER, BUY SMARTER</div>
+              </>
+            ) : (
+              /* Original content for Home page */
               <div className='opacity-55 text-[15px] flex-grow text-center'>SELL FASTER, BUY SMARTER</div>
             )}
             
             {/* Auth buttons */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 ml-auto">
               <div 
                 onClick={() => setIsLoginModalOpen(true)} 
                 className="cursor-pointer text-[12px] hover:underline"
@@ -191,8 +232,8 @@ function Navbar({ showSearchInNav }) {
       
       {isModalOpen && <StateModal />}
       
-      {/* Add spacing to prevent content from being hidden under the navbar */}
-      <div className="h-15"></div>
+      {/* Add spacing only for Vehicles page */}
+      {showSearchInNav && <div className="h-16"></div>}
     </>
   );
 }

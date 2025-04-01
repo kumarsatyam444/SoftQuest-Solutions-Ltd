@@ -14,7 +14,7 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-[140px]">
       <div className="container mx-auto px-4">
         <div className="flex mx-[70px]">
           <div className="w-1/5 bg-white shadow-md p-4 mr-4">
