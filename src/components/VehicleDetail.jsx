@@ -16,9 +16,6 @@ function VehicleDetail() {
 
   // Load vehicle data based on ID
   useEffect(() => {
-    // In a real app, you would fetch the specific vehicle by ID from an API
-    // For this example, we'll just grab the first vehicle from our data
-    // or find the vehicle with the matching ID if it exists
     const foundVehicle = vehiclesData.vehicles.find(v => v.id === id) || vehiclesData.vehicles[0];
     setVehicle(foundVehicle);
   }, [id]);
