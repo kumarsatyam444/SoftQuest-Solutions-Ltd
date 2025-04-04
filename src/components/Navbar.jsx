@@ -9,103 +9,12 @@ function Navbar({ showSearchInNav }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
-  const nigerianStates = [
-    "Abuja (FCT)",
-    "Lagos State",
-    "Ogun State",
-    "Oyo State",
-    "Rivers State",
-    "Abia State",
-    "Adamawa State",
-    "Akwa Ibom State",
-    "Anambra State",
-    "Bauchi State",
-    "Bayelsa State",
-    "Benue State",
-    "Borno State",
-    "Cross River State",
-    "Delta State",
-    "Ebonyi State",
-    "Edo State",
-    "Ekiti State",
-    "Enugu State",
-    "Gombe State",
-    "Imo State",
-    "Jigawa State",
-    "Kaduna State",
-    "Kano State",
-    "Katsina State",
-    "Kebbi State",
-    "Kogi State",
-    "Kwara State",
-    "Nasarawa State",
-    "Niger State",
-    "Ondo State",
-    "Osun State",
-    "Plateau State",
-    "Sokoto State",
-    "Taraba State",
-    "Yobe State",
-    "Zamfara State",
-  ];
-
-  const StateModal = () => {
-    const [searchTerm, setSearchTerm] = useState("");
-
-    const filteredStates = nigerianStates.filter((state) =>
-      state.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-        <div className="bg-white rounded-lg w-11/12 max-w-2xl max-h-[80vh] flex flex-col">
-          {/* Modal Header */}
-          <div className="p-4 border-b flex justify-between items-center">
-            <h2 className="text-xl font-bold">Select State</h2>
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="text-2xl font-bold"
-            >
-              ×
-            </button>
-          </div>
-
-          {/* Search Input */}
-          <div className="p-4">
-            <input
-              type="text"
-              placeholder="Find state, city or district..."
-              className="w-full p-2 border rounded text-gray-500"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-
-          {/* States Grid */}
-          <div className="grid grid-cols-3 gap-2 p-4 overflow-y-auto text-gray-500">
-            {filteredStates.map((state, index) => (
-              <button
-                key={index}
-                className="p-2 border rounded hover:bg-green-100 text-gray-500"
-                onClick={() => {
-                  setSelectedRegion(state);
-                  setIsModalOpen(false);
-                }}
-              >
-                {state}
-              </button>
-            ))}
-          </div>
-
-          {/* Total Ads Information */}
-          <div className="p-4 border-t text-center">
-            <p>All Nigeria • 2,354,071 Ads</p>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
+  // Get current location to determine page type
+  const location = useLocation();
+  const isVehicleDetailPage = location.pathname.includes('/vehicle/');
+  
+  // Rest of the existing code remains the same
+  
   return (
     <>
       <div className='fixed top-0 left-0 w-full z-50 border-b-[1px] border-black border-opacity-15 shadow-sm'>
@@ -149,7 +58,7 @@ function Navbar({ showSearchInNav }) {
                 <div className="relative w-[320px]">
                   <input
                     type="text"
-                    placeholder="Search in Vehicles"
+                    placeholder={isVehicleDetailPage ? "Search in Engines" : "Search in Vehicles"}
                     className="w-full py-2.5 pl-4 pr-16 text-sm text-gray-800 rounded-md focus:outline-none"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
