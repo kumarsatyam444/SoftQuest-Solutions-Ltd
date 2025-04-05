@@ -326,11 +326,12 @@ function VehicleDetail() {
    <div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
     <div className="flex justify-between text-sm">
       <button className="text-gray-600 hover:text-gray-800">
-        Mark unavailable
+        Mark unavailable 
       </button>
       <button className="text-gray-600 hover:text-gray-800">
         Report Abuse
       </button>
+   
     </div>
   </div>
   
