@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import vehiclesData from "../data/vehicles.json";
+import { TbUserCheck, TbUserCircle , TbMessage2Filled, TbPhone, TbMessage} from "react-icons/tb";
+import { FaPhoneAlt } from "react-icons/fa";
 
 function VehicleDetail() {
   const { id } = useParams();
@@ -239,94 +241,120 @@ function VehicleDetail() {
               </div>
             </div>
           </div>
-         
-          {/* Right Column - Seller Info and Actions */}
-          <div className="w-full md:w-1/3">
-            {/* Price and Contact Card */}
-            <div className="bg-white shadow-md rounded-lg p-4 mb-6">
-              <div className="text-green-600 text-2xl font-bold mb-4">₦ {(vehicle.cost || 1200000).toLocaleString()}</div>
-             
-              {/* Contact Buttons */}
-              <div className="space-y-3">
-                <button
-                  onClick={() => setShowContact(!showContact)}
-                  className="w-full bg-[#00b53f] text-white py-2 rounded-md hover:bg-[#009935] transition-colors"
-                >
-                  {showContact ? "080-1234-5678" : "Show contact"}
-                </button>
-               
-                <button className="w-full bg-white text-[#00b53f] border border-[#00b53f] py-2 rounded-md hover:bg-green-50 transition-colors">
-                  Make an offer
-                </button>
-               
-                <button className="w-full bg-white text-gray-700 border border-gray-300 py-2 rounded-md hover:bg-gray-50 transition-colors">
-                  Request call back
-                </button>
-               
-                <button className="w-full bg-white text-blue-600 border border-blue-600 py-2 rounded-md hover:bg-blue-50 transition-colors">
-                  Start chat
-                </button>
-              </div>
-            </div>
-           
-            {/* Seller Info Card */}
-            <div className="bg-white shadow-md rounded-lg p-4 mb-6">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-bold mr-3">
-                  E
-                </div>
-                <div>
-                  <h3 className="font-bold">E. A. G. Limited</h3>
-                  <div className="flex items-center text-sm">
-                    <span className="text-blue-600 mr-1">✓</span>
-                    <span>Verified ID</span>
-                  </div>
-                </div>
-              </div>
-             
-              <div className="text-sm text-gray-600 mb-3">
-                Typically replies within a few hours
-              </div>
-             
-              <div className="text-sm text-gray-600 mb-4">
-                9 y 3 m on Jiji
-              </div>
-             
-              <div className="flex justify-between items-center mb-4">
-                <div className="text-sm font-medium">28 Feedback</div>
-                <button className="text-blue-600 text-sm hover:underline">view all</button>
-              </div>
-             
-              <div className="space-y-2">
-                <button className="w-full bg-white text-gray-700 border border-gray-300 py-2 rounded-md hover:bg-gray-50 transition-colors text-sm">
-                  Mark unavailable
-                </button>
-               
-                <button className="w-full bg-white text-red-600 border border-red-600 py-2 rounded-md hover:bg-red-50 transition-colors text-sm">
-                  Report Abuse
-                </button>
-              </div>
-            </div>
-           
-            {/* Safety Tips Card */}
-            <div className="bg-white shadow-md rounded-lg p-4 mb-6">
-              <h3 className="font-bold text-gray-800 mb-3">Safety tips</h3>
-             
-              <ul className="text-sm text-gray-600 space-y-2 list-disc pl-5">
-                <li>Avoid sending any prepayments</li>
-                <li>Meet with the seller at a safe public place</li>
-                <li>Inspect what you're going to buy to make sure it's what you need</li>
-                <li>Check all the docs and only pay if you're satisfied</li>
-              </ul>
-            </div>
-           
-            {/* Post Ad Button */}
-            <div className="bg-white shadow-md rounded-lg p-4">
-              <button className="w-full bg-[#FEA03C] text-white py-3 rounded-md hover:bg-[#e89235] transition-colors font-medium">
-                Post Ad Like This
-              </button>
-            </div>
+         {/* Right Column - Seller Info and Actions */}
+<div className="w-full md:w-1/3">
+  {/* Price and Primary Action Card */}
+  <div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
+    <div className="text-gray-700 text-2xl font-bold mb-4">₦ 4,500,000</div>
+    
+    {/* Primary Action Button */}
+    <button className="w-full  bg-white text-[#01ad3d] border border-[#08a73f] py-2 rounded-md hover:bg-green-50 transition-colors mb-3 font-semibold">
+      Request call back
+    </button>
+  </div>
+  {/* Seller Info Card with Contact Options */}
+  <div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
+  <div className="flex items-center mb-4">
+    {/* Circular Profile Image */}
+    <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
+      <img 
+        src="/profile-placeholder.png" 
+        alt="Seller Profile" 
+        className="w-full h-full object-cover"
+        onError={(e) => {
+          e.target.src = "https://ui-avatars.com/api/?name=Rafis+Autos&background=f0f0f0&color=666";
+          e.target.onerror = null;
+        }}
+      />
+    </div>
+    
+    <div>
+      <h3 className="font-semibold">Rafis autos</h3>
+      {/* Verified ID Badge with user-check icon in a circular border */}
+      <div className="flex flex-col space-y-1.5">
+        <div className="flex items-center">
+          <div className="flex items-center bg-blue-100 text-blue-800 rounded-full px-2 py-0.5 text-xs">
+            <TbUserCheck className="h-3.5 w-3.5 mr-1" />
+            <span className="font-medium">Verified ID</span>
           </div>
+        </div>
+        
+        {/* Message icon with "Typically replies" text */}
+        <div className="flex items-center text-xs text-gray-500">
+          <TbMessage2Filled className="h-3 w-3 mr-1" />
+          <span className="custom-font-size">Typically replies within minutes</span>
+        </div>
+        
+        {/* User icon with "Time on Jiji" text */}
+        <div className="flex items-center text-xs text-gray-500">
+          <TbUserCircle  className="h-3 w-3 mr-1" />
+          <span className="custom-font-size">7 y 1 m on Jiji</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {/* Contact Buttons */}
+  <div className="space-y-3 mt-4">
+  <button
+    onClick={() => setShowContact(!showContact)}
+    className="w-full bg-[#00b53f] text-white border border-[#00b53f] py-2 rounded-md hover:bg-[#009935] transition-colors flex items-center justify-center font-semibold"
+  >
+    <FaPhoneAlt className="h-3.5 w-3.5 mr-2 text-white" /> {/* Solid phone icon */}
+    {showContact ? "080-1234-5678" : "Show contact"}
+  </button>
+  <button className="w-full bg-white text-[#00b53f] border border-[#00b53f] py-2 rounded-md hover:bg-green-50 transition-colors flex items-center justify-center">
+    <TbMessage className="h-4 w-4 mr-2" />
+    Start chat
+  </button>
+</div>
+</div>
+{/* Feedback Card - NEW */}
+<div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
+    <div className="flex items-center justify-between">
+      <div className="flex items-center">
+        <span className="text-yellow-500 text-lg mr-2">😊</span>
+        <span className="font-medium">26 Feedback</span>
+      </div>
+      <a href="#" className="text-blue-600 text-sm hover:text-blue-800 border-b border-blue-600">
+        view all &gt;
+      </a>
+    </div>
+  </div>
+
+   {/* Actions Card - NEW */}
+   <div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
+    <div className="flex justify-between text-sm">
+      <button className="text-gray-600 hover:text-gray-800">
+        Mark unavailable
+      </button>
+      <button className="text-gray-600 hover:text-gray-800">
+        Report Abuse
+      </button>
+    </div>
+  </div>
+  
+  {/* Safety Tips Card */}
+  <div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
+    <h3 className="font-bold text-gray-800 mb-3">Safety tips</h3>
+    
+    <ul className="text-sm text-gray-600 space-y-2 list-disc pl-5">
+      <li>Avoid sending any prepayments</li>
+      <li>Meet with the seller at a safe public place</li>
+      <li>Inspect what you're going to buy to make sure it's what you need</li>
+      <li>Check all the docs and only pay if you're satisfied</li>
+    </ul>
+  </div>
+  
+  {/* Post Ad Button */}
+  <div className="bg-white shadow-lg rounded-lg p-4 border border-gray-100">
+    <button className="w-full bg-[#FEA03C] text-white py-3 rounded-md hover:bg-[#e89235] transition-colors font-medium">
+      Post Ad Like This
+    </button>
+  </div>
+</div>
+
+     
         </div>
       </div>
     </div>
