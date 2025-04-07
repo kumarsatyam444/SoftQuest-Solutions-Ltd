@@ -13,7 +13,7 @@ function NavbarInfo() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-green-500 shadow-md z-50">
+    <nav className="fixed top-0 left-0 w-full bg-black shadow-md z-50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Menu toggle button for mobile */}
         <button 
@@ -25,9 +25,9 @@ function NavbarInfo() {
           <span className={`block h-0.5 w-full bg-white transition-transform duration-300 ease-in-out ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
         </button>
 
-        {/* Logo */}
+        {/* Logo - changed to gold */}
         <a href="/" className="flex items-center">
-          <div className="text-white text-2xl font-bold">Jiji</div>
+          <div className="text-[#FFD700] text-2xl font-bold">World Auto Motors</div>
         </a>
 
         {/* Search bar */}
@@ -47,30 +47,30 @@ function NavbarInfo() {
           </button>
         </div>
 
-        {/* Tagline */}
-        <div className="hidden lg:block text-white font-bold text-sm whitespace-nowrap">
+        {/* Tagline - changed to gold */}
+        <div className="hidden lg:block text-[#FFD700] font-bold text-sm whitespace-nowrap">
           SELL FASTER, BUY SMARTER
         </div>
 
         {/* Auth Links */}
-        <div className="hidden md:flex items-center text-white text-sm mr-4">
+        <div className="hidden md:flex items-center text-[#FFD700] text-sm mr-4">
           <a href="/signin" className="hover:opacity-80 transition-opacity">Sign in</a>
           <span className="mx-2">|</span>
           <a href="/registration" className="hover:opacity-80 transition-opacity">Registration</a>
         </div>
 
-        {/* Sell button */}
-        <a href="/sell" className="hidden md:block bg-orange-500 text-white font-bold px-6 py-2 rounded hover:bg-orange-600 transition-colors">
+        {/* Sell button - changed to gold with black text */}
+        <a href="/sell" className="hidden md:block bg-[#FFD700] text-black font-bold px-6 py-2 rounded hover:bg-[#E6C200] transition-colors">
           SELL
         </a>
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden bg-green-500 transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-60' : 'max-h-0'}`}>
+      <div className={`md:hidden bg-black transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-60' : 'max-h-0'}`}>
         <div className="flex flex-col p-4">
-          <a href="/signin" className="text-white py-3 border-b border-green-400">Sign in</a>
-          <a href="/registration" className="text-white py-3 border-b border-green-400">Registration</a>
-          <a href="/sell" className="bg-orange-500 text-white font-bold py-3 px-4 mt-3 rounded text-center">
+          <a href="/signin" className="text-[#FFD700] py-3 border-b border-gray-800">Sign in</a>
+          <a href="/registration" className="text-[#FFD700] py-3 border-b border-gray-800">Registration</a>
+          <a href="/sell" className="bg-[#FFD700] text-black font-bold py-3 px-4 mt-3 rounded text-center">
             SELL
           </a>
         </div>

@@ -69,6 +69,7 @@ function Vehicles() {
   ];
 
   // Custom radio button style with white space between button and outer circle
+  // Updated to use golden color instead of green
   const customRadioStyle = `
     .custom-radio {
       appearance: none;
@@ -83,7 +84,7 @@ function Vehicles() {
     }
    
     .custom-radio:checked {
-      border-color: #00b53f;
+      border-color: #FFD700;
     }
    
     .custom-radio:checked::after {
@@ -95,7 +96,7 @@ function Vehicles() {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background-color: #00b53f;
+      background-color: #FFD700;
     }
    
     /* Custom font size class */
@@ -122,8 +123,8 @@ function Vehicles() {
         {/* Breadcrumb Navigation - Adjusted to align with wider sidebar */}
         <div className="mx-4 md:mx-[50px] mb-3 custom-font-size">
           <div className="flex items-center w-full md:w-1/3 lg:w-1/3">
-            <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1">
-              <span className="font-medium text-gray-700">Jiji</span>
+            <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1 max-w-fit">
+              <span className="text-gray-600 whitespace-nowrap overflow-hidden text-ellipsis text-sm">World Auto Motors</span>
             </div>
             <span className="mx-1 text-gray-400">/</span>
             <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1 max-w-fit">
@@ -135,9 +136,9 @@ function Vehicles() {
         <div className="flex flex-col md:flex-row mx-4 md:mx-[50px]">
           {/* Sidebar with Categories and Filters - Increased width */}
           <div className="w-full md:w-1/3 lg:w-1/3 bg-white p-0 mb-4 md:mb-0 md:mr-6 space-y-4">
-            {/* Categories Section */}
+            {/* Categories Section - Changed header background to black with golden text */}
             <div className="bg-white shadow-md">
-              <h2 className="font-semibold text-white text-lg bg-[#00b53f] p-2 mb-0">Categories</h2>
+              <h2 className="font-semibold text-[#FFD700] text-lg bg-black p-2 mb-0">Categories</h2>
              
               <div className="p-4 pt-2">
                 {/* Vehicles Category */}
@@ -161,7 +162,7 @@ function Vehicles() {
                         .map((category, index) => (
                           <div
                             key={index}
-                            className="flex text-gray-700 hover:text-blue-600 cursor-pointer py-0.5 px-2 hover:bg-gray-50 rounded whitespace-nowrap custom-font-size"
+                            className="flex text-gray-700 hover:text-[#FFD700] cursor-pointer py-0.5 px-2 hover:bg-gray-50 rounded whitespace-nowrap custom-font-size"
                           >
                             <span>{category.name}</span>
                             <span className="text-gray-500 ml-1">| {category.count}</span>
@@ -169,9 +170,9 @@ function Vehicles() {
                         ))
                       }
                      
-                      {/* Show all / Show less button */}
+                      {/* Show all / Show less button - changed to golden color */}
                       <div
-                        className="text-green-600 cursor-pointer mt-0.5 px-2 font-medium custom-font-size"
+                        className="text-[#FFD700] cursor-pointer mt-0.5 px-2 font-medium custom-font-size"
                         onClick={toggleShowAllCategories}
                       >
                         {showAllVehicleCategories ? "Show less" : "Show all 8"}
@@ -182,8 +183,8 @@ function Vehicles() {
               </div>
             </div>
            
-            {/* Location Filter - Modified with single card and minimal spacing */}
-            <div className="bg-white shadow-md">
+                       {/* Location Filter - Modified with single card and minimal spacing */}
+                       <div className="bg-white shadow-md">
               <div className="p-4 cursor-pointer hover:bg-gray-50">
                 <div className="flex justify-between items-center">
                   <div>
@@ -242,7 +243,7 @@ function Vehicles() {
                           }}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.priceOption === "under20k" ? "text-[#00b53f]" : ""}>Under 20 K</span>
+                        <span className={selectedFilters.priceOption === "under20k" ? "text-[#FFD700]" : ""}>Under 20 K</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 19 028 ads</span>
                     </div>
@@ -260,7 +261,7 @@ function Vehicles() {
                           }}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.priceOption === "20to120k" ? "text-[#00b53f]" : ""}>20 - 120 K</span>
+                        <span className={selectedFilters.priceOption === "20to120k" ? "text-[#FFD700]" : ""}>20 - 120 K</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 76 113 ads</span>
                     </div>
@@ -278,7 +279,7 @@ function Vehicles() {
                           }}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.priceOption === "120kto11m" ? "text-[#00b53f]" : ""}>120 K - 11 M</span>
+                        <span className={selectedFilters.priceOption === "120kto11m" ? "text-[#FFD700]" : ""}>120 K - 11 M</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 126 855 ads</span>
                     </div>
@@ -296,7 +297,7 @@ function Vehicles() {
                           }}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.priceOption === "11to54m" ? "text-[#00b53f]" : ""}>11 - 54 M</span>
+                        <span className={selectedFilters.priceOption === "11to54m" ? "text-[#FFD700]" : ""}>11 - 54 M</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 79 284 ads</span>
                     </div>
@@ -314,13 +315,13 @@ function Vehicles() {
                           }}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.priceOption === "above54m" ? "text-[#00b53f]" : ""}>More than 54 M</span>
+                        <span className={selectedFilters.priceOption === "above54m" ? "text-[#FFD700]" : ""}>More than 54 M</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 15 856 ads</span>
                     </div>
                   </div>
                  
-                  {/* Clear/Save buttons */}
+                  {/* Clear/Save buttons - changed colors */}
                   <div className="flex justify-between mt-4">
                     <button
                       onClick={clearFilters}
@@ -328,7 +329,7 @@ function Vehicles() {
                     >
                       CLEAR
                     </button>
-                    <button className="text-green-600 hover:text-green-700 font-medium px-3 py-1.5 hover:bg-green-50 rounded text-xs">
+                    <button className="text-[#FFD700] hover:text-[#E6C200] font-medium px-3 py-1.5 hover:bg-gray-100 rounded text-xs">
                       SAVE
                     </button>
                   </div>
@@ -361,7 +362,7 @@ function Vehicles() {
                           onChange={() => handleFilterChange('verifiedSellers', 'all')}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.verifiedSellers === "all" ? "text-[#00b53f]" : ""}>Show all</span>
+                        <span className={selectedFilters.verifiedSellers === "all" ? "text-[#FFD700]" : ""}>Show all</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 317 138 ads</span>
                     </div>
@@ -376,7 +377,7 @@ function Vehicles() {
                           onChange={() => handleFilterChange('verifiedSellers', 'verified')}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.verifiedSellers === "verified" ? "text-[#00b53f]" : ""}>Verified sellers</span>
+                        <span className={selectedFilters.verifiedSellers === "verified" ? "text-[#FFD700]" : ""}>Verified sellers</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 186 703 ads</span>
                     </div>
@@ -391,7 +392,7 @@ function Vehicles() {
                           onChange={() => handleFilterChange('verifiedSellers', 'unverified')}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.verifiedSellers === "unverified" ? "text-[#00b53f]" : ""}>Unverified sellers</span>
+                        <span className={selectedFilters.verifiedSellers === "unverified" ? "text-[#FFD700]" : ""}>Unverified sellers</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 130 435 ads</span>
                     </div>
@@ -425,7 +426,7 @@ function Vehicles() {
                           onChange={() => handleFilterChange('discount', 'all')}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.discount === "all" ? "text-[#00b53f]" : ""}>Show all</span>
+                        <span className={selectedFilters.discount === "all" ? "text-[#FFD700]" : ""}>Show all</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 317 138 ads</span>
                     </div>
@@ -440,7 +441,7 @@ function Vehicles() {
                           onChange={() => handleFilterChange('discount', 'with')}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.discount === "with" ? "text-[#00b53f]" : ""}>With discount</span>
+                        <span className={selectedFilters.discount === "with" ? "text-[#FFD700]" : ""}>With discount</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 393 ads</span>
                     </div>
@@ -455,7 +456,7 @@ function Vehicles() {
                           onChange={() => handleFilterChange('discount', 'without')}
                           className="custom-radio mr-2"
                         />
-                        <span className={selectedFilters.discount === "without" ? "text-[#00b53f]" : ""}>Without discount</span>
+                        <span className={selectedFilters.discount === "without" ? "text-[#FFD700]" : ""}>Without discount</span>
                       </label>
                       <span className="text-gray-500 ml-1">• 316 745 ads</span>
                     </div>
@@ -487,8 +488,8 @@ function Vehicles() {
                       <img
                         src={
                           viewMode === "grid"
-                            ? "/icons/menu-active.png"  // Green icon for active state
-                            : "/icons/menu.png"         // Gray icon for inactive state
+                            ? "/icons/menu-active-gold.png"  // Changed to gold icon for active state
+                            : "/icons/menu.png"              // Gray icon for inactive state
                         }
                         alt="Grid View"
                         className="w-5 h-5"
@@ -503,8 +504,8 @@ function Vehicles() {
                       <img
                         src={
                           viewMode === "list"
-                            ? "/icons/active-line-menu.png"  // Green icon for active state
-                            : "/icons/line-menu.png"         // Gray icon for inactive state
+                            ? "/icons/active-line-menu-gold.png"  // Changed to gold icon for active state
+                            : "/icons/line-menu.png"              // Gray icon for inactive state
                         }
                         alt="List View"
                         className="w-5 h-5"
@@ -516,14 +517,14 @@ function Vehicles() {
                   <div className="flex items-center text-gray-600 custom-font-size">
                     <span className="mr-2">Sort by:</span>
                    
-                    {/* Up arrow in green - increased size and removed margin */}
+                    {/* Up arrow in gold - increased size and removed margin */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#00b53f"
+                      stroke="#FFD700"
                       strokeWidth="2.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -532,14 +533,14 @@ function Vehicles() {
                       <path d="M12 19V5M5 12l7-7 7 7"/>
                     </svg>
                    
-                    {/* Down arrow in green - increased size */}
+                    {/* Down arrow in gold - increased size */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#00b53f"
+                      stroke="#FFD700"
                       strokeWidth="2.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -549,18 +550,18 @@ function Vehicles() {
                     </svg>
                    
                     {/* Recommended option */}
-                    <span className=" text">Recommended</span>
+                    <span className="text">Recommended</span>
                    
                     <span className="mx-2 text-gray-400">|</span>
                    
-                    {/* Clock icon */}
+                    {/* Clock icon in gold */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#00b53f"
+                      stroke="#FFD700"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -571,7 +572,7 @@ function Vehicles() {
                     </svg>
                    
                     {/* Any time option */}
-                    <span className="cursor-pointer hover:text-[#00b53f]">Any time</span>
+                    <span className="cursor-pointer hover:text-[#FFD700]">Any time</span>
                   </div>
                 </div>
               </div>
@@ -647,16 +648,16 @@ function GridViewCard({ vehicle }) {
     return carImages[Math.floor(Math.random() * carImages.length)];
   };
  
-  // Generate random styling for cards
+  // Generate random styling for cards - updated to use gold instead of green
   const getRandomStyling = () => {
     const random = Math.random();
    
-    // Border styles - orange, green, or none
+    // Border styles - gold, black, or none
     let borderStyle = "";
     if (random < 0.15) {
-      borderStyle = "border-orange-500 border-2"; // Orange border (15% chance)
+      borderStyle = "border-[#FFD700] border-2"; // Gold border (15% chance)
     } else if (random < 0.3) {
-      borderStyle = "border-green-500 border-2"; // Green border (15% chance)
+      borderStyle = "border-black border-2"; // Black border (15% chance)
     } else {
       borderStyle = "border border-gray-200"; // Default border (70% chance)
     }
@@ -664,11 +665,11 @@ function GridViewCard({ vehicle }) {
     // Background tint - apply to some cards
     let bgStyle = "";
     if (random < 0.1) {
-      bgStyle = "bg-blue-50"; // Light blue (10% chance)
+      bgStyle = "bg-[#FFF8E1]"; // Very light gold (10% chance)
     } else if (random < 0.17) {
-      bgStyle = "bg-yellow-50"; // Light yellow (7% chance)
+      bgStyle = "bg-[#FFFDE7]"; // Lighter gold (7% chance)
     } else if (random < 0.22) {
-      bgStyle = "bg-purple-50"; // Light purple (5% chance)
+      bgStyle = "bg-gray-50"; // Light gray (5% chance)
     } else {
       bgStyle = "bg-white"; // Default white (78% chance)
     }
@@ -684,8 +685,8 @@ function GridViewCard({ vehicle }) {
       className={`rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col ${randomStyling} cursor-pointer`}
       onClick={handleCardClick}
     >
-          {/* Image Section */}
-          <div className="relative aspect-[4/3]">
+      {/* Image Section */}
+      <div className="relative aspect-[4/3]">
         <img
           src={getCarImage()}
           alt={vehicle.name}
@@ -708,13 +709,13 @@ function GridViewCard({ vehicle }) {
           {formattedDetails}
         </p>
      
-        {/* Tags */}
+        {/* Tags - updated colors */}
         <div className="mb-3 flex flex-wrap gap-2">
           <span
             className={`inline-block px-2 py-1 rounded text-s font-medium ${
               vehicle.condition === "Foreign Used"
-                ? "bg-purple-100 text-purple-800"
-                : "bg-green-100 text-green-800"
+                ? "bg-[#FFF8E1] text-[#B8860B]"  // Light gold bg with darker gold text
+                : "bg-gray-100 text-gray-800"
             }`}
           >
             {vehicle.condition}
@@ -789,26 +790,26 @@ function ListViewCard({ vehicle }) {
     return basePrice * 1000000;
   };
  
-  // Generate random styling for list cards
+  // Generate random styling for list cards - updated to use gold and black
   const getRandomCardStyling = () => {
     const random = Math.random();
      
-    // Border styles - orange, green, or default
+    // Border styles - gold, black, or default
     let borderStyle = "border border-gray-200"; // Default
     if (random < 0.15) {
-      borderStyle = "border-2 border-orange-500"; // Orange border (15% chance)
+      borderStyle = "border-2 border-[#FFD700]"; // Gold border (15% chance)
     } else if (random < 0.3) {
-      borderStyle = "border-2 border-green-500"; // Green border (15% chance)
+      borderStyle = "border-2 border-black"; // Black border (15% chance)
     }
      
     // Background tint - apply to some cards
     let bgStyle = "bg-white"; // Default
     if (random < 0.1) {
-      bgStyle = "bg-blue-50"; // Light blue (10% chance)
+      bgStyle = "bg-[#FFF8E1]"; // Very light gold (10% chance)
     } else if (random < 0.17) {
-      bgStyle = "bg-yellow-50"; // Light yellow (7% chance)
+      bgStyle = "bg-[#FFFDE7]"; // Lighter gold (7% chance)
     } else if (random < 0.22) {
-      bgStyle = "bg-purple-50"; // Light purple (5% chance)
+      bgStyle = "bg-gray-50"; // Light gray (5% chance)
     }
      
     return `${borderStyle} ${bgStyle}`;
@@ -835,16 +836,16 @@ function ListViewCard({ vehicle }) {
           }}
         />
         <div className="absolute top-2 left-2 bg-white px-2 py-1 rounded text-s flex items-center shadow-sm">
-          <span className="text-blue-600 mr-1">✓</span> Verified ID
+          <span className="text-[#FFD700] mr-1">✓</span> Verified ID
         </div>
       </div>
  
       {/* Right side - Content */}
       <div className="p-4 w-3/4 flex flex-col space-y-2">
-        {/* Header with title and price */}
+        {/* Header with title and price - updated price color to gold */}
         <div className="flex justify-between items-start">
           <h2 className="text-lg font-bold">{vehicle.name}</h2>
-          <div className="text-green-500 font-bold">₦ {price.toLocaleString()}</div>
+          <div className="text-[#FFD700] font-bold">₦ {price.toLocaleString()}</div>
         </div>
  
         {/* Details text */}
@@ -854,7 +855,7 @@ function ListViewCard({ vehicle }) {
  
         {/* Badges */}
         <div className="flex flex-wrap gap-2 mt-2">
-          <span className="inline-block bg-gray-100 px-3 py-1 rounded-sm text-s">
+          <span className="inline-block bg-[#FFF8E1] text-[#B8860B] px-3 py-1 rounded-sm text-s">
             Local Used
           </span>
           <span className="inline-block bg-gray-100 px-3 py-1 rounded-sm text-s">
@@ -865,12 +866,12 @@ function ListViewCard({ vehicle }) {
           </span>
         </div>
  
-        {/* Location */}
-        <div className="flex justify-between items-center mt-auto pt-2">
+            {/* Location */}
+            <div className="flex justify-between items-center mt-auto pt-2">
           <div className="flex items-center text-gray-500 custom-font-size">
             <span className="mr-1">📍</span> {vehicle.address || "Lagos, Lekki"}
           </div>
-          <div className="text-yellow-500">⭐</div>
+          <div className="text-[#FFD700]">⭐</div> {/* Changed star color to gold */}
         </div>
       </div>
     </div>

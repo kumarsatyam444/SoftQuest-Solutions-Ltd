@@ -18,8 +18,8 @@ function Navbar({ showSearchInNav }) {
   return (
     <>
       <div className='fixed top-0 left-0 w-full z-50 border-b-[1px] border-black border-opacity-15 shadow-sm'>
-        {/* Increased height for the navbar on Vehicles page */}
-        <div className={`w-full flex justify-center bg-[#00b53f] ${showSearchInNav ? 'py-2' : 'py-1'}`}>
+        {/* Increased height for the navbar on Vehicles page - changed to black background */}
+        <div className={`w-full flex justify-center bg-black ${showSearchInNav ? 'py-2' : 'py-1'}`}>
           <div className="w-full max-w-6xl flex items-center text-white px-6">
             {/* Hamburger menu icon - only show on Vehicles page */}
             {showSearchInNav && (
@@ -33,7 +33,7 @@ function Navbar({ showSearchInNav }) {
                   height="24" 
                   viewBox="0 0 24 24" 
                   fill="none" 
-                  stroke="currentColor" 
+                  stroke="#FFD700" 
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
@@ -47,8 +47,8 @@ function Navbar({ showSearchInNav }) {
               </button>
             )}
             
-            {/* Logo */}
-            <div className="font-extrabold text-3xl mr-4">Jiji</div>
+            {/* Logo - changed to gold */}
+            <div className="font-semibold text-2xl mr-4 text-[#FFD700]">World Auto Motors</div>
             
             {/* Different content based on page */}
             {showSearchInNav ? (
@@ -80,8 +80,8 @@ function Navbar({ showSearchInNav }) {
                       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                   </button>
-                  {/* Save Icon - positioned further right */}
-                  <button className="absolute right-10 top-1/2 transform -translate-y-1/2 text-[#00b53f]">
+                  {/* Save Icon - positioned further right - changed to gold */}
+                  <button className="absolute right-10 top-1/2 transform -translate-y-1/2 text-[#FFD700]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -98,31 +98,31 @@ function Navbar({ showSearchInNav }) {
                   </button>
                 </div>
                 
-                {/* Tagline - now between search and auth buttons */}
-                <div className='opacity-55 text-[15px] mx-auto'>SELL FASTER, BUY SMARTER</div>
+                {/* Tagline - now between search and auth buttons - changed to gold */}
+                <div className='opacity-85 text-[15px] mx-auto text-[#FFD700]'>SELL FASTER, BUY SMARTER</div>
               </>
             ) : (
-              /* Original content for Home page */
-              <div className='opacity-55 text-[15px] flex-grow text-center'>SELL FASTER, BUY SMARTER</div>
+              /* Original content for Home page - changed to gold */
+              <div className='opacity-85 text-[15px] flex-grow text-center text-[#FFD700]'>SELL FASTER, BUY SMARTER</div>
             )}
             
-            {/* Auth buttons */}
+            {/* Auth buttons - changed to gold */}
             <div className="flex items-center space-x-3 ml-auto">
               <div 
                 onClick={() => setIsLoginModalOpen(true)} 
-                className="cursor-pointer text-[12px] hover:underline"
+                className="cursor-pointer text-[12px] hover:underline text-[#FFD700]"
               >
                 Sign in
               </div>
-              <div className="text-sm">|</div>
+              <div className="text-sm text-[#FFD700]">|</div>
               <div 
                 onClick={() => setIsLoginModalOpen(true)} 
-                className="cursor-pointer text-[12px] hover:underline"
+                className="cursor-pointer text-[12px] hover:underline text-[#FFD700]"
               >
                 Registration
               </div>
               <button 
-                className="bg-[#FEA03C] text-[15px] px-[42px] py-[8px] rounded-md font-medium hover:bg-[#e89235]"
+                className="bg-[#FFD700] text-[15px] px-[42px] py-[8px] rounded-md font-medium hover:bg-[#E6C200] text-black"
                 onClick={() => setIsLoginModalOpen(true)}
               >
                 SELL

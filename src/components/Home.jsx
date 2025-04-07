@@ -17,7 +17,8 @@ function Home() {
     <div className="min-h-screen mt-[140px]">
       <div className="container mx-auto px-4">
         <div className="flex mx-[70px]">
-          <div className="w-1/5 bg-white shadow-md p-4 mr-4">
+          {/* Changed background to match the new color scheme */}
+          <div className="w-1/5 bg-white shadow-md p-4 mr-4 border border-[#FFD700]">
             <Category onCategoryClick={handleCategoryClick} />
           </div>
           <div className="w-4/5">

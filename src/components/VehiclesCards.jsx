@@ -15,13 +15,13 @@ function VehiclesCards() {
           <button
             onClick={() => setViewMode("grid")}
             className={`p-2 rounded w-[40px] ${
-              viewMode === "grid" ? " text-white" : "bg-gray-200"
+              viewMode === "grid" ? "bg-black text-white" : "bg-gray-200"
             }`}
           >
             <img
               src={
                 viewMode === "grid"
-                  ? "/icons/menu-active.png"
+                  ? "/icons/menu-active.png"  // Use original icon
                   : "/icons/menu.png"
               }
               alt="Grid View"
@@ -30,14 +30,14 @@ function VehiclesCards() {
           <button
             onClick={() => setViewMode("list")}
             className={`p-2 rounded w-[40px] ${
-              viewMode === "list" ? " text-white" : "bg-gray-200"
+              viewMode === "list" ? "bg-black text-white" : "bg-gray-200"
             }`}
           >
             <img 
               src={
-                viewMode === "grid"
-                  ? "/icons/line-menu.png"
-                  : "/icons/active-line-menu.png"
+                viewMode === "list"
+                  ? "/icons/active-line-menu.png"  // Use original icon
+                  : "/icons/line-menu.png"
               }
               alt="List View"
             />
@@ -104,16 +104,16 @@ function GridViewCard({ vehicle }) {
     return carImages[Math.floor(Math.random() * carImages.length)];
   };
   
-  // Generate random styling for cards
+  // Generate random styling for cards - updated to use gold and black
   const getRandomStyling = () => {
     const random = Math.random();
     
-    // Border styles - orange, green, or none
+    // Border styles - gold, black, or none
     let borderStyle = "";
     if (random < 0.15) {
-      borderStyle = "border-orange-500 border-2"; // Orange border (15% chance)
+      borderStyle = "border-[#FFD700] border-2"; // Gold border (15% chance)
     } else if (random < 0.3) {
-      borderStyle = "border-green-500 border-2"; // Green border (15% chance)
+      borderStyle = "border-black border-2"; // Black border (15% chance)
     } else {
       borderStyle = "border border-gray-200"; // Default border (70% chance)
     }
@@ -121,11 +121,11 @@ function GridViewCard({ vehicle }) {
     // Background tint - apply to some cards
     let bgStyle = "";
     if (random < 0.1) {
-      bgStyle = "bg-blue-50"; // Light blue (10% chance)
+      bgStyle = "bg-[#FFF8E1]"; // Very light gold (10% chance)
     } else if (random < 0.17) {
-      bgStyle = "bg-yellow-50"; // Light yellow (7% chance)
+      bgStyle = "bg-[#FFFDE7]"; // Lighter gold (7% chance)
     } else if (random < 0.22) {
-      bgStyle = "bg-purple-50"; // Light purple (5% chance)
+      bgStyle = "bg-gray-50"; // Light gray (5% chance)
     } else {
       bgStyle = "bg-white"; // Default white (78% chance)
     }
@@ -162,13 +162,13 @@ function GridViewCard({ vehicle }) {
           {formattedDetails}
         </p>
 
-        {/* Tags */}
+        {/* Tags - updated colors */}
         <div className="mb-3 flex flex-wrap gap-2">
           <span
             className={`inline-block px-2 py-1 rounded text-xs font-medium ${
               vehicle.condition === "Foreign Used"
-                ? "bg-purple-100 text-purple-800"
-                : "bg-green-100 text-green-800"
+                ? "bg-[#FFF8E1] text-[#B8860B]"  // Light gold bg with darker gold text
+                : "bg-gray-100 text-gray-800"
             }`}
           >
             {vehicle.condition}
@@ -236,26 +236,26 @@ function ListViewCard({ vehicle }) {
     return basePrice * 1000000;
   };
 
-  // Generate random styling for list cards
+  // Generate random styling for list cards - updated to use gold and black
   const getRandomCardStyling = () => {
     const random = Math.random();
     
-    // Border styles - orange, green, or default
+    // Border styles - gold, black, or default
     let borderStyle = "border border-gray-200"; // Default
     if (random < 0.15) {
-      borderStyle = "border-2 border-orange-500"; // Orange border (15% chance)
+      borderStyle = "border-2 border-[#FFD700]"; // Gold border (15% chance)
     } else if (random < 0.3) {
-      borderStyle = "border-2 border-green-500"; // Green border (15% chance)
+      borderStyle = "border-2 border-black"; // Black border (15% chance)
     }
     
     // Background tint - apply to some cards
     let bgStyle = "bg-white"; // Default
     if (random < 0.1) {
-      bgStyle = "bg-blue-50"; // Light blue (10% chance)
+      bgStyle = "bg-[#FFF8E1]"; // Very light gold (10% chance)
     } else if (random < 0.17) {
-      bgStyle = "bg-yellow-50"; // Light yellow (7% chance)
+      bgStyle = "bg-[#FFFDE7]"; // Lighter gold (7% chance)
     } else if (random < 0.22) {
-      bgStyle = "bg-purple-50"; // Light purple (5% chance)
+      bgStyle = "bg-gray-50"; // Light gray (5% chance)
     }
     
     return `${borderStyle} ${bgStyle}`;
@@ -279,16 +279,16 @@ function ListViewCard({ vehicle }) {
           }}
         />
         <div className="absolute top-2 left-2 bg-white px-2 py-1 rounded text-xs flex items-center shadow-sm">
-          <span className="text-blue-600 mr-1">✓</span> Verified ID
+          <span className="text-[#FFD700] mr-1">✓</span> Verified ID
         </div>
       </div>
 
       {/* Right side - Content */}
       <div className="p-4 w-3/4 flex flex-col space-y-2">
-        {/* Header with title and price */}
+        {/* Header with title and price - updated price color to gold */}
         <div className="flex justify-between items-start">
           <h2 className="text-lg font-bold">{vehicle.name}</h2>
-          <div className="text-green-500 font-bold">₦ {price.toLocaleString()}</div>
+          <div className="text-[#FFD700] font-bold">₦ {price.toLocaleString()}</div>
         </div>
 
         {/* Details text */}
@@ -298,7 +298,7 @@ function ListViewCard({ vehicle }) {
 
         {/* Badges */}
         <div className="flex flex-wrap gap-2 mt-2">
-          <span className="inline-block bg-gray-100 px-3 py-1 rounded-sm text-xs">
+          <span className="inline-block bg-[#FFF8E1] text-[#B8860B] px-3 py-1 rounded-sm text-xs">
             Local Used
           </span>
           <span className="inline-block bg-gray-100 px-3 py-1 rounded-sm text-xs">
@@ -314,7 +314,7 @@ function ListViewCard({ vehicle }) {
           <div className="flex items-center text-gray-500 text-sm">
             <span className="mr-1">📍</span> {vehicle.address || "Lagos, Lekki"}
           </div>
-          <div className="text-yellow-500">⭐</div>
+          <div className="text-[#FFD700]">⭐</div> {/* Changed star color to gold */}
         </div>
       </div>
     </div>

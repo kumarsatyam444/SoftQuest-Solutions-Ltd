@@ -81,7 +81,7 @@ function NavbarSupport() {
             {filteredStates.map((state, index) => (
               <button
                 key={index}
-                className="p-2 border rounded hover:bg-green-100  text-gray-500"
+                className="p-2 border rounded hover:bg-[#FFF8E1] text-gray-500"
                 onClick={() => {
                   setSelectedRegion(state);
                   setIsModalOpen(false);
@@ -102,8 +102,8 @@ function NavbarSupport() {
   };
 
   return (
-    <div className="bg-[#00b53f] rounded-b-[30px] pt-[40px] pb-[30px] mt-[40px]">
-      <div className="text-center text-xl mb-4 pt-[20px] text-white">
+    <div className="bg-black rounded-b-[30px] pt-[40px] pb-[30px] mt-[40px]">
+      <div className="text-center text-xl mb-4 pt-[20px] text-[#FFD700]">
         What are you looking for?
       </div>
       <div className="flex justify-center space-x-2">
@@ -114,7 +114,7 @@ function NavbarSupport() {
           {selectedRegion} ▼
         </div>
 
-        <div className="bg-[#00b53f] py-[0.5] px-4">
+        <div className="bg-black py-[0.5] px-4">
           <div className="relative max-w-3xl mx-auto">
             <input
               type="text"

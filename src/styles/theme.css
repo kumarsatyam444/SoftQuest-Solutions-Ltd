@@ -1,0 +1,91 @@
+/* Gold and Black Theme */
+:root {
+    --primary-gold: #FFD700;
+    --primary-gold-hover: #E6C200;
+    --primary-gold-light: #FFF8E1;
+    --primary-gold-lighter: #FFFDE7;
+    --primary-gold-dark: #B8860B;
+    --primary-black: #000000;
+    --primary-black-light: #222222;
+  }
+  
+  /* Custom button styles */
+  .btn-gold {
+    background-color: var(--primary-gold);
+    color: var(--primary-black);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-gold:hover {
+    background-color: var(--primary-gold-hover);
+  }
+  
+  .btn-black {
+    background-color: var(--primary-black);
+    color: var(--primary-gold);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-black:hover {
+    background-color: var(--primary-black-light);
+  }
+  
+  /* Custom border styles */
+  .border-gold {
+    border-color: var(--primary-gold);
+  }
+  
+  .border-black {
+    border-color: var(--primary-black);
+  }
+  
+  /* Custom text colors */
+  .text-gold {
+    color: var(--primary-gold);
+  }
+  
+  .text-gold-dark {
+    color: var(--primary-gold-dark);
+  }
+  
+  /* Custom background colors */
+  .bg-gold {
+    background-color: var(--primary-gold);
+  }
+  
+  .bg-gold-light {
+    background-color: var(--primary-gold-light);
+  }
+  
+  .bg-gold-lighter {
+    background-color: var(--primary-gold-lighter);
+  }
+  
+  /* Custom hover effects */
+  .hover-gold:hover {
+    color: var(--primary-gold);
+  }
+  
+  .hover-bg-gold:hover {
+    background-color: var(--primary-gold-light);
+  }
+  
+  /* Custom card styling */
+  .card-gold-border {
+    border: 2px solid var(--primary-gold);
+    transition: all 0.3s ease;
+  }
+  
+  .card-gold-border:hover {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  }
+  
+  .card-black-border {
+    border: 2px solid var(--primary-black);
+    transition: all 0.3s ease;
+  }
+  
+  .card-black-border:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  

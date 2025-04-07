@@ -48,37 +48,37 @@ function VehicleDetail() {
       <div className="mx-4 md:mx-[50px] mb-20 mt-[-15px] custom-font-size">
   <div className="flex flex-wrap items-center gap-2">
     <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1">
-      <Link to="/" className="text-gray-700 hover:text-green-600 text-sm">All ads</Link>
+      <Link to="/" className="text-gray-700 hover:text-[#FFD700] text-sm">All ads</Link>
     </div>
     
     <span className="text-gray-400">/</span>
     
     <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1">
-      <Link to="/vehicles" className="text-gray-700 hover:text-green-600 text-sm">Vehicles</Link>
+      <Link to="/vehicles" className="text-gray-700 hover:text-[#FFD700] text-sm">Vehicles</Link>
     </div>
     
     <span className="text-gray-400">/</span>
     
     <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1">
-      <Link to="/vehicles/parts" className="text-gray-700 hover:text-green-600 text-sm">Vehicle Parts & Accessories</Link>
+      <Link to="/vehicles/parts" className="text-gray-700 hover:text-[#FFD700] text-sm">Vehicle Parts & Accessories</Link>
     </div>
     
     <span className="text-gray-400">/</span>
     
     <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1">
-      <Link to="/vehicles/parts/engines" className="text-gray-700 hover:text-green-600 text-sm">Engines</Link>
+      <Link to="/vehicles/parts/engines" className="text-gray-700 hover:text-[#FFD700] text-sm">Engines</Link>
     </div>
     
     <span className="text-gray-400">/</span>
     
     <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1">
-      <Link to="/vehicles/parts/engines/mercedes" className="text-gray-700 hover:text-green-600 text-sm">Mercedes-Benz</Link>
+      <Link to="/vehicles/parts/engines/mercedes" className="text-gray-700 hover:text-[#FFD700] text-sm">Mercedes-Benz</Link>
     </div>
     
     <span className="text-gray-400">/</span>
     
     <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1">
-      <span className="text-gray-500  text-sm">{vehicle.name}</span>
+      <span className="text-gray-500 text-sm">{vehicle.name}</span>
     </div>
   </div>
 </div>
@@ -120,8 +120,8 @@ function VehicleDetail() {
                     {currentImageIndex + 1}/{images.length}
                   </div>
                   
-                  {/* Promoted Badge */}
-                  <div className="absolute top-2 left-2 bg-orange-500 text-white px-2 py-1 rounded text-sm">
+                  {/* Promoted Badge - changed to gold */}
+                  <div className="absolute top-2 left-2 bg-[#FFD700] text-black px-2 py-1 rounded text-sm font-medium">
                     Promoted
                   </div>
                 </div>
@@ -156,7 +156,7 @@ function VehicleDetail() {
                     </div>
                     <div className="flex items-center">
                       <span className="text-gray-500 mr-2">Store address:</span>
-                      <span className="font-medium text-blue-600 cursor-pointer">Show 1 options</span>
+                      <span className="font-medium text-[#FFD700] cursor-pointer">Show 1 options</span>
                     </div>
                   </div>
                 </div>
@@ -188,7 +188,7 @@ function VehicleDetail() {
                     </div>
                   </div>
                   <div className="p-3">
-                    <div className="text-green-600 font-bold mb-1">₦ 60,000</div>
+                    <div className="text-[#FFD700] font-bold mb-1">₦ 60,000</div>
                     <h3 className="font-medium text-sm mb-1">Nissan Ovan Bus Front and Back Windscreen Glass Available</h3>
                     <p className="text-xs text-gray-500 mb-2">Brand New • Lagos, Ipaja</p>
                   </div>
@@ -207,7 +207,7 @@ function VehicleDetail() {
                     </div>
                   </div>
                   <div className="p-3">
-                    <div className="text-green-600 font-bold mb-1">₦ 150,000</div>
+                    <div className="text-[#FFD700] font-bold mb-1">₦ 150,000</div>
                     <h3 className="font-medium text-sm mb-1">Tail Board Hilux 2012 to 2013 Model</h3>
                     <p className="text-xs text-gray-500 mb-2">Used • Lagos, Mushin</p>
                   </div>
@@ -226,7 +226,7 @@ function VehicleDetail() {
                     </div>
                   </div>
                   <div className="p-3">
-                    <div className="text-green-600 font-bold mb-1">₦ 190,000</div>
+                    <div className="text-[#FFD700] font-bold mb-1">₦ 190,000</div>
                     <h3 className="font-medium text-sm mb-1">Complete Catalyst Highlander 2005</h3>
                     <p className="text-xs text-gray-500 mb-2">Used • Lagos, Mushin</p>
                   </div>
@@ -235,7 +235,7 @@ function VehicleDetail() {
              
               {/* View More Button */}
               <div className="mt-4 text-center">
-                <button className="text-blue-600 hover:text-blue-800 font-medium">
+                <button className="text-[#FFD700] hover:text-[#E6C200] font-medium">
                   View more similar adverts
                 </button>
               </div>
@@ -245,10 +245,10 @@ function VehicleDetail() {
 <div className="w-full md:w-1/3">
   {/* Price and Primary Action Card */}
   <div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
-    <div className="text-gray-700 text-2xl font-bold mb-4">₦ 4,500,000</div>
+    <div className="text-[#FFD700] text-2xl font-bold mb-4">₦ 4,500,000</div>
     
-    {/* Primary Action Button */}
-    <button className="w-full  bg-white text-[#01ad3d] border border-[#08a73f] py-2 rounded-md hover:bg-green-50 transition-colors mb-3 font-semibold">
+    {/* Primary Action Button - changed to black with gold text */}
+    <button className="w-full bg-black text-[#FFD700] border border-[#FFD700] py-2 rounded-md hover:bg-gray-900 transition-colors mb-3 font-semibold">
       Request call back
     </button>
   </div>
@@ -272,8 +272,8 @@ function VehicleDetail() {
       <h3 className="font-semibold">Rafis autos</h3>
       {/* Verified ID Badge with user-check icon in a circular border */}
       <div className="flex flex-col space-y-1.5">
-        <div className="flex items-center">
-          <div className="flex items-center bg-blue-100 text-blue-800 rounded-full px-2 py-0.5 text-xs">
+      <div className="flex items-center">
+          <div className="flex items-center bg-[#FFF8E1] text-[#B8860B] rounded-full px-2 py-0.5 text-xs">
             <TbUserCheck className="h-3.5 w-3.5 mr-1" />
             <span className="font-medium">Verified ID</span>
           </div>
@@ -288,22 +288,22 @@ function VehicleDetail() {
         {/* User icon with "Time on Jiji" text */}
         <div className="flex items-center text-xs text-gray-500">
           <TbUserCircle  className="h-3 w-3 mr-1" />
-          <span className="custom-font-size">7 y 1 m on Jiji</span>
+          <span className="custom-font-size">7 y 1 m on World Auto Motors</span>
         </div>
       </div>
     </div>
   </div>
   
-  {/* Contact Buttons */}
+  {/* Contact Buttons - updated colors */}
   <div className="space-y-3 mt-4">
   <button
     onClick={() => setShowContact(!showContact)}
-    className="w-full bg-[#00b53f] text-white border border-[#00b53f] py-2 rounded-md hover:bg-[#009935] transition-colors flex items-center justify-center font-semibold"
+    className="w-full bg-black text-[#FFD700] border border-[#FFD700] py-2 rounded-md hover:bg-gray-900 transition-colors flex items-center justify-center font-semibold"
   >
-    <FaPhoneAlt className="h-3.5 w-3.5 mr-2 text-white" /> {/* Solid phone icon */}
+    <FaPhoneAlt className="h-3.5 w-3.5 mr-2 text-[#FFD700]" /> {/* Gold phone icon */}
     {showContact ? "080-1234-5678" : "Show contact"}
   </button>
-  <button className="w-full bg-white text-[#00b53f] border border-[#00b53f] py-2 rounded-md hover:bg-green-50 transition-colors flex items-center justify-center">
+  <button className="w-full bg-white text-black border border-black py-2 rounded-md hover:bg-gray-50 transition-colors flex items-center justify-center">
     <TbMessage className="h-4 w-4 mr-2" />
     Start chat
   </button>
@@ -313,10 +313,10 @@ function VehicleDetail() {
 <div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
     <div className="flex items-center justify-between">
       <div className="flex items-center">
-        <span className="text-yellow-500 text-lg mr-2">😊</span>
+        <span className="text-[#FFD700] text-lg mr-2">😊</span>
         <span className="font-medium">26 Feedback</span>
       </div>
-      <a href="#" className="text-blue-600 text-sm hover:text-blue-800 border-b border-blue-600">
+      <a href="#" className="text-[#FFD700] text-sm hover:text-[#E6C200] border-b border-[#FFD700]">
         view all &gt;
       </a>
     </div>
@@ -331,7 +331,6 @@ function VehicleDetail() {
       <button className="text-gray-600 hover:text-gray-800">
         Report Abuse
       </button>
-   
     </div>
   </div>
   
@@ -347,9 +346,9 @@ function VehicleDetail() {
     </ul>
   </div>
   
-  {/* Post Ad Button */}
+  {/* Post Ad Button - changed to black with gold text */}
   <div className="bg-white shadow-lg rounded-lg p-4 border border-gray-100">
-    <button className="w-full bg-[#FEA03C] text-white py-3 rounded-md hover:bg-[#e89235] transition-colors font-medium">
+    <button className="w-full bg-black text-[#FFD700] py-3 rounded-md hover:bg-gray-900 transition-colors font-medium">
       Post Ad Like This
     </button>
   </div>
