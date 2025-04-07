@@ -138,7 +138,7 @@ function Vehicles() {
           <div className="w-full md:w-1/3 lg:w-1/3 bg-white p-0 mb-4 md:mb-0 md:mr-6 space-y-4">
             {/* Categories Section - Changed header background to black with golden text */}
             <div className="bg-white shadow-md">
-              <h2 className="font-semibold text-[#FFD700] text-lg bg-black p-2 mb-0">Categories</h2>
+              <h2 className="font-semibold text-[#FFD700] text-lg bg-[#000080] p-2 mb-0">Categories</h2>
              
               <div className="p-4 pt-2">
                 {/* Vehicles Category */}

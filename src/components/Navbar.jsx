@@ -19,7 +19,7 @@ function Navbar({ showSearchInNav }) {
     <>
       <div className='fixed top-0 left-0 w-full z-50 border-b-[1px] border-black border-opacity-15 shadow-sm'>
         {/* Increased height for the navbar on Vehicles page - changed to black background */}
-        <div className={`w-full flex justify-center bg-black ${showSearchInNav ? 'py-2' : 'py-1'}`}>
+        <div className={`w-full flex justify-center bg-[#000080] ${showSearchInNav ? 'py-2' : 'py-1'}`}>
           <div className="w-full max-w-6xl flex items-center text-white px-6">
             {/* Hamburger menu icon - only show on Vehicles page */}
             {showSearchInNav && (

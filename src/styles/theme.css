@@ -1,18 +1,19 @@
-/* Gold and Black Theme */
+/* Gold and Navy Blue Theme */
 :root {
     --primary-gold: #FFD700;
     --primary-gold-hover: #E6C200;
     --primary-gold-light: #FFF8E1;
     --primary-gold-lighter: #FFFDE7;
     --primary-gold-dark: #B8860B;
-    --primary-black: #000000;
-    --primary-black-light: #222222;
+    --primary-navy: #000080;
+    --primary-navy-light: #0000A0;
+    --primary-navy-dark: #00004D;
   }
   
   /* Custom button styles */
   .btn-gold {
     background-color: var(--primary-gold);
-    color: var(--primary-black);
+    color: var(--primary-navy);
     transition: all 0.3s ease;
   }
   
@@ -20,14 +21,14 @@
     background-color: var(--primary-gold-hover);
   }
   
-  .btn-black {
-    background-color: var(--primary-black);
+  .btn-navy {
+    background-color: var(--primary-navy);
     color: var(--primary-gold);
     transition: all 0.3s ease;
   }
   
-  .btn-black:hover {
-    background-color: var(--primary-black-light);
+  .btn-navy:hover {
+    background-color: var(--primary-navy-light);
   }
   
   /* Custom border styles */
@@ -35,8 +36,8 @@
     border-color: var(--primary-gold);
   }
   
-  .border-black {
-    border-color: var(--primary-black);
+  .border-navy {
+    border-color: var(--primary-navy);
   }
   
   /* Custom text colors */
@@ -46,6 +47,10 @@
   
   .text-gold-dark {
     color: var(--primary-gold-dark);
+  }
+  
+  .text-navy {
+    color: var(--primary-navy);
   }
   
   /* Custom background colors */
@@ -61,6 +66,14 @@
     background-color: var(--primary-gold-lighter);
   }
   
+  .bg-navy {
+    background-color: var(--primary-navy);
+  }
+  
+  .bg-navy-light {
+    background-color: var(--primary-navy-light);
+  }
+  
   /* Custom hover effects */
   .hover-gold:hover {
     color: var(--primary-gold);
@@ -68,6 +81,14 @@
   
   .hover-bg-gold:hover {
     background-color: var(--primary-gold-light);
+  }
+  
+  .hover-navy:hover {
+    color: var(--primary-navy);
+  }
+  
+  .hover-bg-navy:hover {
+    background-color: var(--primary-navy-light);
   }
   
   /* Custom card styling */
@@ -80,12 +101,12 @@
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
   }
   
-  .card-black-border {
-    border: 2px solid var(--primary-black);
+  .card-navy-border {
+    border: 2px solid var(--primary-navy);
     transition: all 0.3s ease;
   }
   
-  .card-black-border:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  .card-navy-border:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 128, 0.3);
   }
   

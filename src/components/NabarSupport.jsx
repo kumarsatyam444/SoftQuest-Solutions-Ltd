@@ -52,7 +52,7 @@ function NavbarSupport() {
     );
 
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+      <div className="fixed inset-0 bg-[#000080] bg-opacity-50 z-50 flex items-center justify-center">
         <div className="bg-white rounded-lg w-11/12 max-w-2xl max-h-[80vh] flex flex-col">
           {/* Modal Header */}
           <div className="p-4 border-b flex justify-between items-center">
@@ -102,7 +102,7 @@ function NavbarSupport() {
   };
 
   return (
-    <div className="bg-black rounded-b-[30px] pt-[40px] pb-[30px] mt-[40px]">
+    <div className="bg-[#000080] rounded-b-[30px] pt-[40px] pb-[30px] mt-[40px]">
       <div className="text-center text-xl mb-4 pt-[20px] text-[#FFD700]">
         What are you looking for?
       </div>
@@ -114,7 +114,7 @@ function NavbarSupport() {
           {selectedRegion} ▼
         </div>
 
-        <div className="bg-black py-[0.5] px-4">
+        <div className="bg-[#000080] py-[0.5] px-4">
           <div className="relative max-w-3xl mx-auto">
             <input
               type="text"

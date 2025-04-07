@@ -116,7 +116,7 @@ function VehicleDetail() {
                   </button>
                  
                   {/* Image Counter */}
-                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
+                  <div className="absolute bottom-2 right-2 bg-[#000080] bg-opacity-60 text-white px-2 py-1 rounded text-sm">
                     {currentImageIndex + 1}/{images.length}
                   </div>
                   
@@ -248,7 +248,7 @@ function VehicleDetail() {
     <div className="text-[#FFD700] text-2xl font-bold mb-4">₦ 4,500,000</div>
     
     {/* Primary Action Button - changed to black with gold text */}
-    <button className="w-full bg-black text-[#FFD700] border border-[#FFD700] py-2 rounded-md hover:bg-gray-900 transition-colors mb-3 font-semibold">
+    <button className="w-full bg-[#000080] text-[#FFD700] border border-[#FFD700] py-2 rounded-md hover:bg-gray-900 transition-colors mb-3 font-semibold">
       Request call back
     </button>
   </div>
@@ -298,41 +298,52 @@ function VehicleDetail() {
   <div className="space-y-3 mt-4">
   <button
     onClick={() => setShowContact(!showContact)}
-    className="w-full bg-black text-[#FFD700] border border-[#FFD700] py-2 rounded-md hover:bg-gray-900 transition-colors flex items-center justify-center font-semibold"
+    className="w-full bg-[#000080] text-[#FFD700] border border-[#FFD700] py-2 rounded-md hover:bg-gray-900 transition-colors flex items-center justify-center font-semibold"
   >
     <FaPhoneAlt className="h-3.5 w-3.5 mr-2 text-[#FFD700]" /> {/* Gold phone icon */}
     {showContact ? "080-1234-5678" : "Show contact"}
   </button>
-  <button className="w-full bg-white text-black border border-black py-2 rounded-md hover:bg-gray-50 transition-colors flex items-center justify-center">
+  <button className="w-full bg-white text-[#FFD700] border border-[#FFD700] py-2 rounded-md hover:bg-gray-50 transition-colors flex items-center justify-center">
     <TbMessage className="h-4 w-4 mr-2" />
     Start chat
   </button>
 </div>
 </div>
-{/* Feedback Card - NEW */}
+{/* Feedback Card - UPDATED */}
 <div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
-    <div className="flex items-center justify-between">
-      <div className="flex items-center">
-        <span className="text-[#FFD700] text-lg mr-2">😊</span>
-        <span className="font-medium">26 Feedback</span>
-      </div>
-      <a href="#" className="text-[#FFD700] text-sm hover:text-[#E6C200] border-b border-[#FFD700]">
-        view all &gt;
-      </a>
+  {/* Single button with all elements inside */}
+  <a href="#" className="w-full bg-white text-[#FEA03C] border border-[#FEA03C] py-2 rounded-md hover:bg-gray-50 transition-colors flex items-center justify-between px-4">
+    {/* Left side with emoji and feedback count */}
+    <div className="flex items-center">
+      <span className="text-[#FEA03C] text-lg mr-2">😊</span>
+      <span className="font-medium text-[#FEA03C]">26 Feedback</span>
     </div>
-  </div>
+    
+    {/* Right side with "view all >" */}
+    <div className="flex items-center">
+      <span className="border-b border-[#FEA03C]">view all</span>
+      <span className="ml-1">&gt;</span>
+    </div>
+  </a>
+</div>
 
-   {/* Actions Card - NEW */}
-   <div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
-    <div className="flex justify-between text-sm">
-      <button className="text-gray-600 hover:text-gray-800">
-        Mark unavailable 
-      </button>
-      <button className="text-gray-600 hover:text-gray-800">
-        Report Abuse
-      </button>
-    </div>
+
+
+{/* Actions Card - UPDATED */}
+<div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
+  <div className="flex justify-between text-sm gap-4">
+    {/* Mark unavailable button - sky blue */}
+    <button className="flex-1 font-semibold py-2 px-4 border border-[#3B82F6] text-[#3B82F6] rounded-full hover:bg-blue-50 transition-colors">
+      Mark unavailable
+    </button>
+    
+    {/* Report Abuse button - red */}
+    <button className="flex-1 font-semibold py-2 px-4 border border-[#EF4444] text-[#EF4444] rounded-full hover:bg-red-50 transition-colors">
+      Report Abuse
+    </button>
   </div>
+</div>
+
   
   {/* Safety Tips Card */}
   <div className="bg-white shadow-lg rounded-lg p-4 mb-6 border border-gray-100">
@@ -348,7 +359,7 @@ function VehicleDetail() {
   
   {/* Post Ad Button - changed to black with gold text */}
   <div className="bg-white shadow-lg rounded-lg p-4 border border-gray-100">
-    <button className="w-full bg-black text-[#FFD700] py-3 rounded-md hover:bg-gray-900 transition-colors font-medium">
+    <button className="w-full bg-[#000080] text-[#FFD700] py-3 border border-[#FFD700] rounded-md hover:bg-gray-900 transition-colors font-medium">
       Post Ad Like This
     </button>
   </div>

@@ -15,7 +15,7 @@ function VehiclesCards() {
           <button
             onClick={() => setViewMode("grid")}
             className={`p-2 rounded w-[40px] ${
-              viewMode === "grid" ? "bg-black text-white" : "bg-gray-200"
+              viewMode === "grid" ? "bg-[#000080]text-white" : "bg-gray-200"
             }`}
           >
             <img
@@ -30,7 +30,7 @@ function VehiclesCards() {
           <button
             onClick={() => setViewMode("list")}
             className={`p-2 rounded w-[40px] ${
-              viewMode === "list" ? "bg-black text-white" : "bg-gray-200"
+              viewMode === "list" ? "bg-[#000080] text-white" : "bg-gray-200"
             }`}
           >
             <img 
@@ -108,15 +108,15 @@ function GridViewCard({ vehicle }) {
   const getRandomStyling = () => {
     const random = Math.random();
     
-    // Border styles - gold, black, or none
-    let borderStyle = "";
-    if (random < 0.15) {
-      borderStyle = "border-[#FFD700] border-2"; // Gold border (15% chance)
-    } else if (random < 0.3) {
-      borderStyle = "border-black border-2"; // Black border (15% chance)
-    } else {
-      borderStyle = "border border-gray-200"; // Default border (70% chance)
-    }
+ // Border styles - gold, navy, or none
+ let borderStyle = "";
+ if (random < 0.15) {
+   borderStyle = "border-[#FFD700] border-2"; // Gold border (15% chance)
+ } else if (random < 0.3) {
+   borderStyle = "border-[#000080] border-2"; // Navy border (15% chance)
+ } else {
+   borderStyle = "border border-gray-200"; // Default border (70% chance)
+ }
     
     // Background tint - apply to some cards
     let bgStyle = "";
@@ -240,12 +240,12 @@ function ListViewCard({ vehicle }) {
   const getRandomCardStyling = () => {
     const random = Math.random();
     
-    // Border styles - gold, black, or default
+    // Border styles - gold, navy, or default
     let borderStyle = "border border-gray-200"; // Default
     if (random < 0.15) {
       borderStyle = "border-2 border-[#FFD700]"; // Gold border (15% chance)
     } else if (random < 0.3) {
-      borderStyle = "border-2 border-black"; // Black border (15% chance)
+      borderStyle = "border-2 border-[#000080]"; // Navy border (15% chance)
     }
     
     // Background tint - apply to some cards
