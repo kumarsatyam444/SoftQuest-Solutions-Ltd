@@ -113,6 +113,24 @@ function Vehicles() {
     .text-sm {
       font-size: 16px !important;
     }
+       /* Custom scrollbar styling with gold color */
+  .gold-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .gold-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  .gold-scrollbar::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 10px;
+  }
+
+  .gold-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #E6C200;
+  }
   `;
 
   // In the Vehicles component return statement
@@ -134,335 +152,336 @@ function Vehicles() {
         </div>
 
         <div className="flex flex-col md:flex-row mx-4 md:mx-[50px]">
-          {/* Sidebar with Categories and Filters - Increased width */}
-          <div className="w-full md:w-1/3 lg:w-1/3 bg-white p-0 mb-4 md:mb-0 md:mr-6 space-y-4">
-            {/* Categories Section - Changed header background to black with golden text */}
-            <div className="bg-white shadow-md">
-              <h2 className="font-semibold text-[#FFD700] text-lg bg-[#000080] p-2 mb-0">Categories</h2>
-             
-              <div className="p-4 pt-2">
-                {/* Vehicles Category */}
-                <div className="mb-3">
-                  <div
-                    className="flex justify-between items-center cursor-pointer py-2.5 hover:bg-gray-50 px-2 rounded"
-                    onClick={() => toggleCategory("Vehicles")}
-                  >
-                    <span className="font-medium text-gray-800">Vehicles</span>
-                    <span className="text-gray-500 text-lg">
-                      {expandedCategories.includes("Vehicles") ? "−" : "+"}
-                    </span>
+          {/* Sidebar with Categories and Filters - Fixed with scrollbar */}
+          <div className="w-full md:w-1/3 lg:w-1/3 md:sticky md:top-[80px] md:self-start md:h-[calc(100vh-100px)] md:overflow-y-auto gold-scrollbar mb-4 md:mb-0 md:mr-6 md:pr-2">
+            <div className="space-y-4">
+              {/* Categories Section - Changed header background to black with golden text */}
+              <div className="bg-white shadow-md">
+                <h2 className="font-semibold text-[#FFD700] text-lg bg-[#000080] p-2 mb-0 sticky top-0 z-10">Categories</h2>
+                
+                <div className="p-4 pt-2">
+                  {/* Vehicles Category */}
+                  <div className="mb-3">
+                    <div
+                      className="flex justify-between items-center cursor-pointer py-2.5 hover:bg-gray-50 px-2 rounded"
+                      onClick={() => toggleCategory("Vehicles")}
+                    >
+                      <span className="font-medium text-gray-800">Vehicles</span>
+                      <span className="text-gray-500 text-lg">
+                        {expandedCategories.includes("Vehicles") ? "−" : "+"}
+                      </span>
+                    </div>
+                   
+                    {/* Subcategories with reduced spacing */}
+                    {expandedCategories.includes("Vehicles") && (
+                      <div className="ml-4 mt-1 space-y-0.5">
+                        {/* Show only first 4 categories or all based on state */}
+                        {vehicleCategories
+                          .slice(0, showAllVehicleCategories ? vehicleCategories.length : 4)
+                          .map((category, index) => (
+                            <div
+                              key={index}
+                              className="flex text-gray-700 hover:text-[#FFD700] cursor-pointer py-0.5 px-2 hover:bg-gray-50 rounded whitespace-nowrap custom-font-size"
+                            >
+                              <span>{category.name}</span>
+                              <span className="text-gray-500 ml-1">| {category.count}</span>
+                            </div>
+                          ))
+                        }
+                       
+                        {/* Show all / Show less button - changed to golden color */}
+                        <div
+                          className="text-[#FFD700] cursor-pointer mt-0.5 px-2 font-medium custom-font-size"
+                          onClick={toggleShowAllCategories}
+                        >
+                          {showAllVehicleCategories ? "Show less" : "Show all 8"}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                 
-                  {/* Subcategories with reduced spacing */}
-                  {expandedCategories.includes("Vehicles") && (
-                    <div className="ml-4 mt-1 space-y-0.5">
-                      {/* Show only first 4 categories or all based on state */}
-                      {vehicleCategories
-                        .slice(0, showAllVehicleCategories ? vehicleCategories.length : 4)
-                        .map((category, index) => (
-                          <div
-                            key={index}
-                            className="flex text-gray-700 hover:text-[#FFD700] cursor-pointer py-0.5 px-2 hover:bg-gray-50 rounded whitespace-nowrap custom-font-size"
-                          >
-                            <span>{category.name}</span>
-                            <span className="text-gray-500 ml-1">| {category.count}</span>
-                          </div>
-                        ))
-                      }
+                </div>
+              </div>
+             
+              {/* Location Filter - Modified with single card and minimal spacing */}
+              <div className="bg-white shadow-md">
+                <div className="p-4 cursor-pointer hover:bg-gray-50">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h2 className="font-semibold text-gray-700 text-lg mb-0.5">Location</h2>
+                      <p className="text-gray-600 custom-font-size">{selectedFilters.location}</p>
+                    </div>
+                    <span className="text-gray-400 text-xl">&#62;</span>
+                  </div>
+                </div>
+              </div>
+             
+              {/* Price Filter with expand/collapse */}
+              <div className="bg-white shadow-md">
+                <div
+                  className="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-50"
+                  onClick={() => toggleCategory("Price")}
+                >
+                  <h2 className="font-semibold text-gray-700 text-lg">Price, ₦</h2>
+                  <span className="text-gray-500 text-lg">
+                    {expandedCategories.includes("Price") ? "−" : "+"}
+                  </span>
+                </div>
+
+                {expandedCategories.includes("Price") && (
+                  <div className="p-4 pt-0">
+                    <div className="flex items-center space-x-2 mb-4 mt-3">
+                      <input
+                        type="text"
+                        placeholder="min"
+                        value={priceRange.min}
+                        onChange={(e) => handlePriceChange('min', e.target.value)}
+                        className="w-1/2 p-2 border rounded custom-font-size"
+                      />
+                      <span className="text-gray-500 font-medium">-</span>
+                      <input
+                        type="text"
+                        placeholder="max"
+                        value={priceRange.max}
+                        onChange={(e) => handlePriceChange('max', e.target.value)}
+                        className="w-1/2 p-2 border rounded custom-font-size"
+                      />
+                    </div>
+                   
+                    {/* Price ranges with custom radio buttons */}
+                    <div className="space-y-1.5 custom-font-size">
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="priceOption"
+                            value="under20k"
+                            checked={selectedFilters.priceOption === "under20k"}
+                            onChange={() => {
+                              handleFilterChange('priceOption', 'under20k');
+                              setPriceRange({ min: "0", max: "20000" });
+                            }}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.priceOption === "under20k" ? "text-[#FFD700]" : ""}>Under 20 K</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 19 028 ads</span>
+                      </div>
                      
-                      {/* Show all / Show less button - changed to golden color */}
-                      <div
-                        className="text-[#FFD700] cursor-pointer mt-0.5 px-2 font-medium custom-font-size"
-                        onClick={toggleShowAllCategories}
-                      >
-                        {showAllVehicleCategories ? "Show less" : "Show all 8"}
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="priceOption"
+                            value="20to120k"
+                            checked={selectedFilters.priceOption === "20to120k"}
+                            onChange={() => {
+                              handleFilterChange('priceOption', '20to120k');
+                              setPriceRange({ min: "20000", max: "120000" });
+                            }}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.priceOption === "20to120k" ? "text-[#FFD700]" : ""}>20 - 120 K</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 76 113 ads</span>
+                      </div>
+                     
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="priceOption"
+                            value="120kto11m"
+                            checked={selectedFilters.priceOption === "120kto11m"}
+                            onChange={() => {
+                              handleFilterChange('priceOption', '120kto11m');
+                              setPriceRange({ min: "120000", max: "11000000" });
+                            }}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.priceOption === "120kto11m" ? "text-[#FFD700]" : ""}>120 K - 11 M</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 126 855 ads</span>
+                      </div>
+                     
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="priceOption"
+                            value="11to54m"
+                            checked={selectedFilters.priceOption === "11to54m"}
+                            onChange={() => {
+                              handleFilterChange('priceOption', '11to54m');
+                              setPriceRange({ min: "11000000", max: "54000000" });
+                            }}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.priceOption === "11to54m" ? "text-[#FFD700]" : ""}>11 - 54 M</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 79 284 ads</span>
+                      </div>
+                     
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="priceOption"
+                            value="above54m"
+                            checked={selectedFilters.priceOption === "above54m"}
+                            onChange={() => {
+                              handleFilterChange('priceOption', 'above54m');
+                              setPriceRange({ min: "54000000", max: "" });
+                            }}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.priceOption === "above54m" ? "text-[#FFD700]" : ""}>More than 54 M</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 15 856 ads</span>
                       </div>
                     </div>
-                  )}
-                </div>
-              </div>
-            </div>
-           
-                       {/* Location Filter - Modified with single card and minimal spacing */}
-                       <div className="bg-white shadow-md">
-              <div className="p-4 cursor-pointer hover:bg-gray-50">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h2 className="font-semibold text-gray-700 text-lg mb-0.5">Location</h2>
-                    <p className="text-gray-600 custom-font-size">{selectedFilters.location}</p>
-                  </div>
-                  <span className="text-gray-400 text-xl">&#62;</span>
-                </div>
-              </div>
-            </div>
-           
-            {/* Price Filter with expand/collapse */}
-            <div className="bg-white shadow-md">
-              <div
-                className="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-50"
-                onClick={() => toggleCategory("Price")}
-              >
-                <h2 className="font-semibold text-gray-700 text-lg">Price, ₦</h2>
-                <span className="text-gray-500 text-lg">
-                  {expandedCategories.includes("Price") ? "−" : "+"}
-                </span>
-              </div>
-
-              {expandedCategories.includes("Price") && (
-                <div className="p-4 pt-0">
-                  <div className="flex items-center space-x-2 mb-4 mt-3">
-                    <input
-                      type="text"
-                      placeholder="min"
-                      value={priceRange.min}
-                      onChange={(e) => handlePriceChange('min', e.target.value)}
-                      className="w-1/2 p-2 border rounded custom-font-size"
-                    />
-                    <span className="text-gray-500 font-medium">-</span>
-                    <input
-                      type="text"
-                      placeholder="max"
-                      value={priceRange.max}
-                      onChange={(e) => handlePriceChange('max', e.target.value)}
-                      className="w-1/2 p-2 border rounded custom-font-size"
-                    />
-                  </div>
-                 
-                  {/* Price ranges with custom radio buttons */}
-                  <div className="space-y-1.5 custom-font-size">
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="priceOption"
-                          value="under20k"
-                          checked={selectedFilters.priceOption === "under20k"}
-                          onChange={() => {
-                            handleFilterChange('priceOption', 'under20k');
-                            setPriceRange({ min: "0", max: "20000" });
-                          }}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.priceOption === "under20k" ? "text-[#FFD700]" : ""}>Under 20 K</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 19 028 ads</span>
-                    </div>
-                   
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="priceOption"
-                          value="20to120k"
-                          checked={selectedFilters.priceOption === "20to120k"}
-                          onChange={() => {
-                            handleFilterChange('priceOption', '20to120k');
-                            setPriceRange({ min: "20000", max: "120000" });
-                          }}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.priceOption === "20to120k" ? "text-[#FFD700]" : ""}>20 - 120 K</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 76 113 ads</span>
-                    </div>
-                   
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="priceOption"
-                          value="120kto11m"
-                          checked={selectedFilters.priceOption === "120kto11m"}
-                          onChange={() => {
-                            handleFilterChange('priceOption', '120kto11m');
-                            setPriceRange({ min: "120000", max: "11000000" });
-                          }}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.priceOption === "120kto11m" ? "text-[#FFD700]" : ""}>120 K - 11 M</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 126 855 ads</span>
-                    </div>
-                   
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="priceOption"
-                          value="11to54m"
-                          checked={selectedFilters.priceOption === "11to54m"}
-                          onChange={() => {
-                            handleFilterChange('priceOption', '11to54m');
-                            setPriceRange({ min: "11000000", max: "54000000" });
-                          }}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.priceOption === "11to54m" ? "text-[#FFD700]" : ""}>11 - 54 M</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 79 284 ads</span>
-                    </div>
-                   
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="priceOption"
-                          value="above54m"
-                          checked={selectedFilters.priceOption === "above54m"}
-                          onChange={() => {
-                            handleFilterChange('priceOption', 'above54m');
-                            setPriceRange({ min: "54000000", max: "" });
-                          }}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.priceOption === "above54m" ? "text-[#FFD700]" : ""}>More than 54 M</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 15 856 ads</span>
+                    {/* Clear/Save buttons - changed colors */}
+                    <div className="flex justify-between mt-4">
+                      <button
+                        onClick={clearFilters}
+                        className="text-gray-500 hover:text-gray-700 px-3 py-1.5 hover:bg-gray-100 rounded text-xs"
+                      >
+                        CLEAR
+                      </button>
+                      <button className="text-[#FFD700] hover:text-[#E6C200] font-medium px-3 py-1.5 hover:bg-gray-100 rounded text-xs">
+                        SAVE
+                      </button>
                     </div>
                   </div>
-                 
-                  {/* Clear/Save buttons - changed colors */}
-                  <div className="flex justify-between mt-4">
-                    <button
-                      onClick={clearFilters}
-                      className="text-gray-500 hover:text-gray-700 px-3 py-1.5 hover:bg-gray-100 rounded text-xs"
-                    >
-                      CLEAR
-                    </button>
-                    <button className="text-[#FFD700] hover:text-[#E6C200] font-medium px-3 py-1.5 hover:bg-gray-100 rounded text-xs">
-                      SAVE
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-           
-            {/* Verified sellers filter with expand/collapse */}
-            <div className="bg-white shadow-md">
-              <div
-                className="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-50"
-                onClick={() => toggleCategory("VerifiedSellers")}
-              >
-                <h2 className="font-semibold text-gray-700 text-lg">Verified sellers</h2>
-                <span className="text-gray-500 text-lg">
-                  {expandedCategories.includes("VerifiedSellers") ? "−" : "+"}
-                </span>
+                )}
               </div>
              
-              {expandedCategories.includes("VerifiedSellers") && (
-                <div className="p-4 pt-0">
-                  <div className="space-y-1.5 custom-font-size mt-3">
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="verifiedSellers"
-                          value="all"
-                          checked={selectedFilters.verifiedSellers === "all"}
-                          onChange={() => handleFilterChange('verifiedSellers', 'all')}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.verifiedSellers === "all" ? "text-[#FFD700]" : ""}>Show all</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 317 138 ads</span>
-                    </div>
-                   
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="verifiedSellers"
-                          value="verified"
-                          checked={selectedFilters.verifiedSellers === "verified"}
-                          onChange={() => handleFilterChange('verifiedSellers', 'verified')}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.verifiedSellers === "verified" ? "text-[#FFD700]" : ""}>Verified sellers</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 186 703 ads</span>
-                    </div>
-                   
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="verifiedSellers"
-                          value="unverified"
-                          checked={selectedFilters.verifiedSellers === "unverified"}
-                          onChange={() => handleFilterChange('verifiedSellers', 'unverified')}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.verifiedSellers === "unverified" ? "text-[#FFD700]" : ""}>Unverified sellers</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 130 435 ads</span>
+              {/* Verified sellers filter with expand/collapse */}
+              <div className="bg-white shadow-md">
+                <div
+                  className="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-50"
+                  onClick={() => toggleCategory("VerifiedSellers")}
+                >
+                  <h2 className="font-semibold text-gray-700 text-lg">Verified sellers</h2>
+                  <span className="text-gray-500 text-lg">
+                    {expandedCategories.includes("VerifiedSellers") ? "−" : "+"}
+                  </span>
+                </div>
+               
+                {expandedCategories.includes("VerifiedSellers") && (
+                  <div className="p-4 pt-0">
+                    <div className="space-y-1.5 custom-font-size mt-3">
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="verifiedSellers"
+                            value="all"
+                            checked={selectedFilters.verifiedSellers === "all"}
+                            onChange={() => handleFilterChange('verifiedSellers', 'all')}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.verifiedSellers === "all" ? "text-[#FFD700]" : ""}>Show all</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 317 138 ads</span>
+                      </div>
+                     
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="verifiedSellers"
+                            value="verified"
+                            checked={selectedFilters.verifiedSellers === "verified"}
+                            onChange={() => handleFilterChange('verifiedSellers', 'verified')}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.verifiedSellers === "verified" ? "text-[#FFD700]" : ""}>Verified sellers</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 186 703 ads</span>
+                      </div>
+                     
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="verifiedSellers"
+                            value="unverified"
+                            checked={selectedFilters.verifiedSellers === "unverified"}
+                            onChange={() => handleFilterChange('verifiedSellers', 'unverified')}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.verifiedSellers === "unverified" ? "text-[#FFD700]" : ""}>Unverified sellers</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 130 435 ads</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-            </div>
-           
-            {/* Discount filter with expand/collapse */}
-            <div className="bg-white shadow-md">
-              <div
-                className="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-50"
-                onClick={() => toggleCategory("Discount")}
-              >
-                <h2 className="font-semibold text-gray-700 text-lg">Discount</h2>
-                <span className="text-gray-500 text-lg">
-                  {expandedCategories.includes("Discount") ? "−" : "+"}
-                </span>
+                )}
               </div>
              
-              {expandedCategories.includes("Discount") && (
-                <div className="p-4 pt-0">
-                  <div className="space-y-1.5 custom-font-size mt-3">
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="discount"
-                          value="all"
-                          checked={selectedFilters.discount === "all"}
-                          onChange={() => handleFilterChange('discount', 'all')}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.discount === "all" ? "text-[#FFD700]" : ""}>Show all</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 317 138 ads</span>
-                    </div>
-                   
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="discount"
-                          value="with"
-                          checked={selectedFilters.discount === "with"}
-                          onChange={() => handleFilterChange('discount', 'with')}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.discount === "with" ? "text-[#FFD700]" : ""}>With discount</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 393 ads</span>
-                    </div>
-                   
-                    <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="discount"
-                          value="without"
-                          checked={selectedFilters.discount === "without"}
-                          onChange={() => handleFilterChange('discount', 'without')}
-                          className="custom-radio mr-2"
-                        />
-                        <span className={selectedFilters.discount === "without" ? "text-[#FFD700]" : ""}>Without discount</span>
-                      </label>
-                      <span className="text-gray-500 ml-1">• 316 745 ads</span>
+              {/* Discount filter with expand/collapse */}
+              <div className="bg-white shadow-md">
+                <div
+                  className="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-50"
+                  onClick={() => toggleCategory("Discount")}
+                >
+                  <h2 className="font-semibold text-gray-700 text-lg">Discount</h2>
+                  <span className="text-gray-500 text-lg">
+                    {expandedCategories.includes("Discount") ? "−" : "+"}
+                  </span>
+                </div>
+               
+                {expandedCategories.includes("Discount") && (
+                  <div className="p-4 pt-0">
+                    <div className="space-y-1.5 custom-font-size mt-3">
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="discount"
+                            value="all"
+                            checked={selectedFilters.discount === "all"}
+                            onChange={() => handleFilterChange('discount', 'all')}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.discount === "all" ? "text-[#FFD700]" : ""}>Show all</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 317 138 ads</span>
+                      </div>
+                     
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="discount"
+                            value="with"
+                            checked={selectedFilters.discount === "with"}
+                            onChange={() => handleFilterChange('discount', 'with')}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.discount === "with" ? "text-[#FFD700]" : ""}>With discount</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 393 ads</span>
+                      </div>
+                     
+                      <div className="flex items-center text-gray-700 hover:bg-gray-50 p-1.5 rounded">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="discount"
+                            value="without"
+                            checked={selectedFilters.discount === "without"}
+                            onChange={() => handleFilterChange('discount', 'without')}
+                            className="custom-radio mr-2"
+                          />
+                          <span className={selectedFilters.discount === "without" ? "text-[#FFD700]" : ""}>Without discount</span>
+                        </label>
+                        <span className="text-gray-500 ml-1">• 316 745 ads</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>
 
@@ -866,8 +885,8 @@ function ListViewCard({ vehicle }) {
           </span>
         </div>
  
-            {/* Location */}
-            <div className="flex justify-between items-center mt-auto pt-2">
+        {/* Location */}
+        <div className="flex justify-between items-center mt-auto pt-2">
           <div className="flex items-center text-gray-500 custom-font-size">
             <span className="mr-1">📍</span> {vehicle.address || "Lagos, Lekki"}
           </div>
